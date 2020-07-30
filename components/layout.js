@@ -2,14 +2,14 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 
-function Layout(props) {
+function Layout({ children }) {
   return (
-    <div className="container mx-auto">
+    <div>
       <Header />
 
-      <main>{props.children}</main>
+      <main className="container">{children}</main>
 
-      <Footer social={props.social} />
+      <Footer />
     </div>
   );
 }

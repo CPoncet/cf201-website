@@ -1,16 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+
+import { FiX } from "react-icons/fi";
 
 function Header() {
+  const [nav, setNav] = useState(false);
+
   return (
-    <header className="py-4 flex">
-      <div className="w-1/2">
-        <img src="/layout/logo.svg" alt="Collectif 201" />
+    <header className="container">
+      <div className="row">
+        <div className="column is-half stack logo">
+          <img src="cf201-logo.svg" />
+        </div>
+
+        <div className="column is-half stack menu">
+          <a className="toggle-menu" onClick={() => setNav(!nav)}>
+            Menu
+            <img src="menu1.svg" />
+          </a>
+        </div>
       </div>
-      <div className="w-1/2 flex justify-end">
-        <a className="flex items-center cursor-pointer">
-          <span className="mr-4 text-xl font-display">Menu</span>
-          <img src="/layout/icons/burger.svg" alt="Menu" />
+      <div className="nav" style={{ display: nav ? "block" : "none" }}>
+        <a className="close-menu" onClick={() => setNav(!nav)}>
+          Close <FiX size="1.5em" />
         </a>
+        <div>
+          <nav className="main-nav">
+            <ul>
+              <li>
+                <Link href="/">
+                  <a>Accueil</a>
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/blog">
+                  <a>Blog</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="nav-footer">
+          <nav className="social-nav">
+            <ul>
+              <li>
+                <a href="https://facebook.com">Facebook</a>
+              </li>
+              <li>
+                <a href="https://facebook.com">Twitter</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   );

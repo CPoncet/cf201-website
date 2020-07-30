@@ -1,0 +1,208 @@
+/* 
+
+Collectif 201 Website main stylesheet 
+
+Uses PostCSS plugins:
+- Rucksack CSS
+- Autoprefixer
+- Laggard
+
+*/
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Poppins:ital,wght@0,600;1,500&display=swap");
+
+/* Aliases */
+@alias {
+  /* Sizes */
+  w: width;
+  h: height;
+
+  /* Spacing */
+  m: margin;
+  ml: margin-left;
+  mb: margin-bottom;
+  mr: margin-right;
+  mt: margin-top;
+
+  p: padding;
+  pl: padding-left;
+  pb: padding-bottom;
+  pr: padding-right;
+  pt: padding-top;
+
+  /* Deco */
+  bg: background;
+  c: color;
+  lst: list-style-type;
+
+  /* Font */
+  fs: font-size;
+  fw: font-weight;
+  ff: font-family;
+  fst: font-style;
+  tt: text-transform;
+  td: text-decoration;
+  ta: text-align;
+
+  /* Flex */
+  ai: align-items;
+  jc: justify-content;
+
+  /* Other */
+  d: display;
+}
+
+/* Globals */
+body {
+  ff: "Open Sans", sans-serif;
+  fw: 300;
+  fs: responsive;
+}
+
+h1 {
+  ff: "Poppins", sans-serif;
+  fw: 600;
+}
+h2 {
+  ff: "Poppins", sans-serif;
+  fw: 600;
+  fst: italic;
+}
+
+/* 
+------
+Header 
+------ 
+*/
+/* Mobile */
+@media (max-width: 768px) {
+  header .logo img {
+    w: 100% !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  header .logo img {
+    w: 100% !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+}
+
+/* Widescreen */
+@media (min-width: 1216px) {
+}
+
+/* Full HD */
+@media (min-width: 1408px) {
+}
+
+header .logo img {
+  w: 50%;
+}
+
+header .menu {
+  d: flex;
+  jc: flex-end;
+  ai: center;
+  ff: "Poppins", sans-serif;
+  fw: 600;
+}
+
+header .menu .toggle-menu {
+  d: flex;
+  ai: center;
+  jc: center;
+  cursor: pointer;
+}
+
+header .menu img {
+  h: 39px;
+  ml: 1em;
+}
+
+header .nav {
+  position: absolute 0;
+  h: 100%;
+  w: 100%;
+  bg: #f19066;
+}
+
+header .nav .main-nav {
+  d: flex;
+  ai: center;
+  jc: center;
+  h: 80vh;
+}
+
+header .nav .close-menu {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+  c: white;
+  d: flex;
+  ai: center;
+  jc: center;
+}
+
+header .nav .main-nav ul {
+  lst: none;
+  ta: center;
+}
+
+header .nav .main-nav a {
+  fw: 800;
+  tt: uppercase;
+  td: none;
+  c: white;
+  fs: 3em;
+}
+
+header .nav .social-nav {
+  d: flex;
+  ai: center;
+  jc: center;
+  h: 20vh;
+}
+
+header .nav .social-nav ul {
+  lst: none;
+  ta: center;
+}
+
+header .nav .social-nav ul li {
+  d: inline-block;
+  mr: 1em;
+}
+
+header .nav .social-nav ul li:last-child {
+  mr: 0;
+}
+
+header .nav .social-nav a {
+  td: none;
+  c: white;
+}
+
+/* ===== */
+
+/* 
+------
+Footer 
+------ 
+*/
+
+/* ===== */
+
+/* 
+------
+Homepage
+------ 
+*/
+
+/* ===== */

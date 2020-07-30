@@ -1,3 +1,9 @@
 module.exports = {
-  plugins: ["tailwindcss", "postcss-preset-env"],
+  plugins: [
+    "postcss-preset-env",
+    "lost",
+    "autoprefixer",
+    "rucksack-css",
+    "laggard",
+  ],
 };

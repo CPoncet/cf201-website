@@ -8,13 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^9.8.5",
     "axios": "^0.19.2",
+    "laggard": "^2.0.1",
+    "lost": "^8.3.1",
     "next": "9.4.4",
+    "normalize.css": "^8.0.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0",
+    "rucksack-css": "^1.0.2"
   },
   "devDependencies": {
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.4.6"
+    "postcss-preset-env": "^6.7.0"
   }
 }
