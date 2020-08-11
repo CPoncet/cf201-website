@@ -2,12 +2,12 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 
-function Layout({ children }) {
+function Layout(props) {
   return (
-    <div>
+    <div className={props.page}>
       <Header />
 
-      <main className="container">{children}</main>
+      <main className="container">{props.children}</main>
 
       <Footer />
     </div>

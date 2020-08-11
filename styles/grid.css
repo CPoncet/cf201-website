@@ -11,6 +11,7 @@ Requires:
 @import "../node_modules/normalize.css/normalize.css";
 
 @lost flexbox flex;
+@lost gutter 1em;
 
 * {
   lost-utility: edit;
@@ -19,7 +20,7 @@ Requires:
 /* Mobile */
 @media (max-width: 768px) {
   .container {
-    lost-center: 768px no-flex;
+    lost-center: 768px 1em no-flex;
   }
   .column:not(.stack) {
     lost-column: 1/1 !important;
@@ -29,7 +30,7 @@ Requires:
 /* Tablet */
 @media (min-width: 769px) and (max-width: 1023px) {
   .container {
-    lost-center: 769px no-flex;
+    lost-center: 769px 1em no-flex;
   }
 
   .column:not(.stack) {
@@ -40,31 +41,35 @@ Requires:
 /* Desktop */
 @media (min-width: 1024px) {
   .container {
-    lost-center: 1024px no-flex;
+    lost-center: 1024px 1em no-flex;
   }
 }
 
 /* Widescreen */
 @media (min-width: 1216px) {
   .container {
-    lost-center: 1216px no-flex;
+    lost-center: 1216px 1em no-flex;
   }
 }
 
 /* Full HD */
 @media (min-width: 1408px) {
   .container {
-    lost-center: 1408px no-flex;
+    lost-center: 1408px 1em no-flex;
   }
 }
 
 .fullwidth {
-  max-width: 100% !important;
+  min-width: 100% !important;
 }
 
 .row {
-  lost-row: 1/3;
+  lost-row: 1/3 6em;
   lost-flex-container: row;
+}
+
+.no-gutter {
+  lost-row: 1/3 0 !important;
 }
 
 .is-single {
