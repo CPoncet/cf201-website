@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-import Facebook from "./svg/Facebook";
-import Twitter from "./svg/Twitter";
-import Linkedin from "./svg/Linkedin";
-import Instagram from "./svg/Instagram";
-import Dribbble from "./svg/Dribbble";
+import Facebook from "./svg/icons/Facebook";
+import Twitter from "./svg/icons/Twitter";
+import Linkedin from "./svg/icons/Linkedin";
+import Instagram from "./svg/icons/Instagram";
+import Dribbble from "./svg/icons/Dribbble";
 
 function Footer() {
   return (
@@ -47,7 +47,7 @@ function Footer() {
         </div>
         <div className="column is-2"></div>
         <div className="column is-7 social">
-          <div className="row">
+          <div className="row no-gutter">
             <p>
               Retrouvez-nous sur les réseaux sociaux ou sur vos portables
               téléphoniques

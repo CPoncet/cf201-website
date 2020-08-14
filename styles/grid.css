@@ -25,6 +25,13 @@ Requires:
   .column:not(.stack) {
     lost-column: 1/1 !important;
   }
+  .is-hidden-handheld {
+    display: none;
+  }
+
+  .is-hidden-mobile {
+    display: none;
+  }
 }
 
 /* Tablet */
@@ -36,12 +43,21 @@ Requires:
   .column:not(.stack) {
     lost-column: 1/2 !important;
   }
+  .is-hidden-tablet {
+    display: none;
+  }
+  .is-hidden-mobile {
+    display: none;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .container {
     lost-center: 1024px 1em no-flex;
+  }
+  .is-hidden-desktop {
+    display: none;
   }
 }
 
@@ -50,12 +66,18 @@ Requires:
   .container {
     lost-center: 1216px 1em no-flex;
   }
+  .is-hidden-desktop {
+    display: none;
+  }
 }
 
 /* Full HD */
 @media (min-width: 1408px) {
   .container {
     lost-center: 1408px 1em no-flex;
+  }
+  .is-hidden-desktop {
+    display: none;
   }
 }
 
@@ -68,7 +90,7 @@ Requires:
   lost-flex-container: row;
 }
 
-.no-gutter {
+.row.no-gutter {
   lost-row: 1/3 0 !important;
 }
 
