@@ -9,11 +9,11 @@ import Dribbble from "./svg/icons/Dribbble";
 
 function Footer() {
   return (
-    <footer className="container">
-      <div className="row banner">
+    <footer className="container mx-auto">
+      <div className="banner relative mt-10">
         <object data="/footer/banner_footer.svg"></object>
-        <div className="text">
-          <h2>Votre projet</h2>
+        <div className="text text-center absolute inset-0 flex flex-col items-center justify-center">
+          <h2 className="not-italic">Votre projet</h2>
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum
@@ -29,15 +29,15 @@ function Footer() {
         </div>
       </div>
 
-      <div className="row rest">
-        <div className="column is-3 logo">
+      <div className="rest flex">
+        <div className="w-3/12 logo">
           <Link href="/">
             <a>
               <img src="cf201-logo.svg" />
             </a>
           </Link>
 
-          <p>
+          <p className="pl-16">
             Mentions légales
             <br />
             Tous droits réservés
@@ -45,40 +45,40 @@ function Footer() {
             &copy; 2020 - COLLECTIF 201
           </p>
         </div>
-        <div className="column is-2"></div>
-        <div className="column is-7 social">
-          <div className="row no-gutter">
-            <p>
+        <div className="w-2/12"></div>
+        <div className="w-7/12 social">
+          <div>
+            <p className="w-full text-center italic">
               Retrouvez-nous sur les réseaux sociaux ou sur vos portables
               téléphoniques
             </p>
           </div>
-          <div className="row">
-            <div className="column is-one-fifth stack">
+          <div className="flex">
+            <div className="w-1/5">
               <a href="#" className="social-link">
                 <Facebook />
               </a>
             </div>
 
-            <div className="column is-one-fifth stack">
+            <div className="w-1/5">
               <a href="#" className="social-link">
                 <Twitter />
               </a>
             </div>
 
-            <div className="column is-one-fifth stack">
+            <div className="w-1/5">
               <a href="#" className="social-link">
                 <Linkedin />
               </a>
             </div>
 
-            <div className="column is-one-fifth stack">
+            <div className="w-1/5">
               <a href="#" className="social-link">
                 <Instagram />
               </a>
             </div>
 
-            <div className="column is-one-fifth stack">
+            <div className="w-1/5">
               <a href="#" className="social-link">
                 <Dribbble />
               </a>
@@ -86,37 +86,37 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="row sitemap">
+      <div className="sitemap items-center justify-center">
         <nav className="nav-sitemap">
-          <ul>
-            <li>
+          <ul className="list-none">
+            <li className="inline-block ml-0">
               <Link href="#">
-                <a>Accueil</a>
+                <a className="text-primary no-underline">Accueil</a>
               </Link>
             </li>
-            <li>
+            <li className="inline-block ml-4">
               <Link href="#">
-                <a>Le Collectif</a>
+                <a className="text-primary no-underline">Le Collectif</a>
               </Link>
             </li>
-            <li>
+            <li className="inline-block ml-4">
               <Link href="#">
-                <a>Nos services</a>
+                <a className="text-primary no-underline">Nos services</a>
               </Link>
             </li>
-            <li>
+            <li className="inline-block ml-4">
               <Link href="#">
-                <a>Nos références</a>
+                <a className="text-primary no-underline">Nos références</a>
               </Link>
             </li>
-            <li>
+            <li className="inline-block ml-4">
               <Link href="#">
-                <a>Blog</a>
+                <a className="text-primary no-underline">Blog</a>
               </Link>
             </li>
-            <li>
+            <li className="inline-block ml-4">
               <Link href="#">
-                <a>Contact</a>
+                <a className="text-primary no-underline">Contact</a>
               </Link>
             </li>
           </ul>

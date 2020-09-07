@@ -7,7 +7,7 @@ function Layout(props) {
     <div className={props.page}>
       <Header />
 
-      <main className="container">{props.children}</main>
+      <main className="container mx-auto">{props.children}</main>
 
       <Footer />
     </div>

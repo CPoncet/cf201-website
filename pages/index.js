@@ -17,8 +17,8 @@ export default () => {
 
   return (
     <Layout page="homepage">
-      <div className="row hero">
-        <div className="column is-half text">
+      <div className="hero flex text-right">
+        <div className="text w-1/2 flex items-center">
           <div>
             <h1>Nous sommes à jour</h1>
 
@@ -31,19 +31,19 @@ export default () => {
             <button href="/">Un projet ? Parlons-en !</button>
           </div>
         </div>
-        <div className="column is-half">
+        <div className="w-1/2">
           <HeroHome />
         </div>
       </div>
-      <div className="row collectif">
-        <div className="row no-gutter ">
+      <div className="collectif">
+        <div className="text flex items-center">
           <h2>Le Collectif</h2>
         </div>
-        <div className="row no-gutter">
-          <div className="column is-one-quarter image stack">
-            <img className="smaller" src="/home/collectif_element-1.svg" />
+        <div className="flex">
+          <div className="w-1/4 image flex justify-end">
+            <img className="w-3/4" src="/home/collectif_element-1.svg" />
           </div>
-          <div className="column is-three-quarters text stack">
+          <div className="w-3/4 flex items-center">
             <div>
               <h3>Notre expertise</h3>
               <p>
@@ -54,11 +54,11 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="row no-gutter">
-          <div className="column is-one-quarter stack">
+        <div className="flex">
+          <div className="w-1/4">
             <img src="/home/collectif_element-2.svg" />
           </div>
-          <div className="column is-three-quarters text stack">
+          <div className="text w-3/4 flex items-center justify-center">
             <div>
               <h3>Notre philosophie</h3>
               <p>
@@ -69,8 +69,8 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="row engagements">
-          <div className="column is-half text">
+        <div className="engagements">
+          <div className="text w-1/2 flex items-center justify-center">
             <div>
               <h3>Nos engagements et nos valeurs</h3>
               <p>Mettre l'humain au centre de nos préoccupations.</p>
@@ -80,16 +80,18 @@ export default () => {
                 <li>Humain</li>
                 <li>Qualité</li>
               </ul>
-              <button href="#">En savoir plus</button>
+              <button className="block mx-auto" href="#">
+                En savoir plus
+              </button>
             </div>
           </div>
-          <div className="column is-half">
+          <div className="w-1/2">
             <HeroHome2 />
           </div>
         </div>
       </div>
-      <div className="row services">
-        <div className="row no-gutter">
+      <div className="services">
+        <div>
           <h2>Nos Services</h2>
 
           <p style={{ textAlign: "center" }}>
@@ -98,51 +100,72 @@ export default () => {
             adimenda.
           </p>
         </div>
-        <div className="row no-gutter">
-          <div className="column is-one-third">
-            <div ref={ref} className="icon-box" style={{ height: height }}>
+        <div className="flex flex-wrap">
+          <div className="w-1/3">
+            <div
+              ref={ref}
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Sites web</h4>
             </div>
           </div>
-          <div className="column is-one-third">
-            <div className="icon-box" style={{ height: height }}>
+          <div className="w-1/3">
+            <div
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Logo / Identité visuelle</h4>
             </div>
           </div>
-          <div className="column is-one-third">
-            <div className="icon-box" style={{ height: height }}>
+          <div className="w-1/3">
+            <div
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Supports imprimés</h4>
             </div>
           </div>
-          <div className="column is-one-third">
-            <div className="icon-box" style={{ height: height }}>
+          <div className="w-1/3">
+            <div
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Réseaux sociaux</h4>
             </div>
           </div>
-          <div className="column is-one-third">
-            <div className="icon-box" style={{ height: height }}>
+          <div className="w-1/3">
+            <div
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Stratégie marketing</h4>
             </div>
           </div>
-          <div className="column is-one-third">
-            <div className="icon-box" style={{ height: height }}>
+          <div className="w-1/3">
+            <div
+              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
+              style={{ height: height }}
+            >
               <Desktop />
               <h4>Conseils</h4>
             </div>
           </div>
         </div>
-        <div className="row text">
-          <button href="#">En savoir plus</button>
+        <div className="text">
+          <button className="block mx-auto" href="#">
+            En savoir plus
+          </button>
         </div>
       </div>
-      <div className="row references">
-        <div className="row no-gutter">
-          <h2>Nos Références</h2>
+      <div className="references">
+        <div>
+          <h2 className="text-left">Nos Références</h2>
 
           <p>
             Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post
@@ -150,38 +173,38 @@ export default () => {
             adimenda.
           </p>
         </div>
-        <div className="row logo-wall">
-          <div className="bg">
+        <div className="logo-wall relative">
+          <div className="bg absolute inset-0 z--1">
             <HeroHome3 />
           </div>
 
-          <div className="logos">
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+          <div className="logos flex flex-wrap w-4/6 mx-auto">
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
-            <div className="column is-one-third stack">
-              <img src="https://picsum.photos/300/150" />
+            <div className="w-1/3">
+              <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
           </div>
         </div>

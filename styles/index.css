@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Poppins:ital,wght@0,600;1,500&display=swap");
+
+/* Globals */
+html,
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f2f3f4;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-style: responsive 12px 18px;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  display: inline-block;
+  position: relative;
+}
+
+h3:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: #f8c8b3;
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  z-index: -1;
+}
+
+.z--1 {
+  z-index: -1;
+}
+
+button {
+  cursor: pointer;
+  border: 2px solid #263238;
+  border-radius: 15px;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: 600;
+  background: transparent;
+  position: relative;
+  margin-left: 2em;
+}
+
+button:before {
+  content: "";
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: #f8c8b3;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  transform: translate(0);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover:before {
+  transform: translate(-9px, -9px);
+  transition: all 0.2s ease-in-out;
+}
+
+button:first-of-type {
+  margin-left: 0;
+}
+
+.list {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  list-style-type: none;
+}
+
+.list li {
+  margin-bottom: 2em;
+  padding-left: 5em;
+  position: relative;
+  font-weight: 600;
+}
+
+.list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.list li:before {
+  content: "";
+  width: 2em;
+  height: 2em;
+  border: 1px solid #263238;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list li:after {
+  content: "";
+  width: 2em;
+  height: 2em;
+  background: #f8c8b3;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: -2px;
+  z-index: -1;
+}
+
+/* Header */
+
+header .menu .menu-svg {
+  height: 39px;
+  margin-left: 1em;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+header .menu .menu-svg rect {
+  fill: #f19066;
+  transition: width 0.5s;
+}
+
+header .menu .menu-svg .low {
+  width: 27px;
+}
+
+header .menu .toggle-menu:hover .menu-svg .low {
+  width: 39px;
+}
+
+/* Footer */
+
+footer .banner object {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  miw: 100%;
+  w: 150%;
+  h: 35vh;
+}
+
+footer .rest .social .social-svg .st0 {
+  fill: #f8c8b3;
+}
+
+footer .rest .social .social-svg .st1 {
+  display: none;
+}
+
+footer .rest .social .social-svg .st2 {
+  display: inline;
+}
+
+footer .rest .social .social-svg .st3 {
+  fill: #263238;
+}
+
+footer .rest .social .social-svg .st4 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #263238;
+}
+
+footer .rest .social .social-svg .st5 {
+  display: inline;
+  fill: #263238;
+}
+footer .rest .social .social-svg circle {
+  transform: translate(0);
+  transition: all 0.2s ease-in-out;
+}
+footer .rest .social .social-svg:hover circle:not(.not-animated) {
+  transform: translate(-20px, -21px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Homepage */
+
+@keyframes rotateLamp {
+  0% {
+    transform: rotate(0);
+    transform-origin: 257px 116px;
+  }
+  50% {
+    transform: rotate(45deg);
+    transform-origin: 257px 116px;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: 257px 116px;
+  }
+}
+
+@keyframes rotateHand {
+  0% {
+    transform: rotate(0);
+    transform-origin: 155px 150px;
+  }
+  50% {
+    transform: rotate(5deg);
+    transform-origin: 155px 150px;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: 155px 150px;
+  }
+}
+
+.homepage main .hero .hero-home-svg .lamp {
+  animation: rotateLamp;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.homepage main .hero .hero-home-svg .hand {
+  animation: rotateHand;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.homepage main .hero .hero-home-svg .smoke {
+  stroke-dasharray: 15;
+  stroke-dashoffset: 50;
+  stroke-width: 0.5 !important;
+  animation: dash 5s linear forwards;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.homepage .services .icon-box svg {
+  width: 25%;
+}
