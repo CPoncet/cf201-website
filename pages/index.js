@@ -13,16 +13,19 @@ export default () => {
 
   useEffect(() => {
     setHeight(ref.current.clientWidth);
+    window.addEventListener("resize", () => {
+      setHeight(ref.current.clientWidth);
+    });
   }, [height]);
 
   return (
     <Layout page="homepage">
-      <div className="hero flex text-right">
-        <div className="text w-1/2 flex items-center">
+      <section className="hero container mx-auto flex text-right">
+        <div className="text w-1/2 flex items-center pr-4">
           <div>
             <h1>Nous sommes à jour</h1>
 
-            <p>
+            <p className="mb-8">
               Vous souhaitez l'être aussi ? Faites confiance à notre Collectif
               pour tous vos projets de communication numérique.
             </p>
@@ -34,8 +37,8 @@ export default () => {
         <div className="w-1/2">
           <HeroHome />
         </div>
-      </div>
-      <div className="collectif">
+      </section>
+      <section className="collectif container mx-auto">
         <div className="text flex items-center">
           <h2>Le Collectif</h2>
         </div>
@@ -43,7 +46,7 @@ export default () => {
           <div className="w-1/4 image flex justify-end">
             <img className="w-3/4" src="/home/collectif_element-1.svg" />
           </div>
-          <div className="w-3/4 flex items-center">
+          <div className="w-3/4 flex items-center ml-8">
             <div>
               <h3>Notre expertise</h3>
               <p>
@@ -58,7 +61,7 @@ export default () => {
           <div className="w-1/4">
             <img src="/home/collectif_element-2.svg" />
           </div>
-          <div className="text w-3/4 flex items-center justify-center">
+          <div className="text w-3/4 flex items-center justify-center ml-8">
             <div>
               <h3>Notre philosophie</h3>
               <p>
@@ -69,7 +72,7 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="engagements">
+        <div className="engagements flex mt-8">
           <div className="text w-1/2 flex items-center justify-center">
             <div>
               <h3>Nos engagements et nos valeurs</h3>
@@ -89,19 +92,19 @@ export default () => {
             <HeroHome2 />
           </div>
         </div>
-      </div>
-      <div className="services">
+      </section>
+      <section className="services container mx-auto">
         <div>
           <h2>Nos Services</h2>
 
-          <p style={{ textAlign: "center" }}>
+          <p className="text-center">
             Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post
             commune si palatinarum iniusta adlocutus conperto id ille ut
             adimenda.
           </p>
         </div>
-        <div className="flex flex-wrap">
-          <div className="w-1/3">
+        <div className="flex flex-wrap p-16">
+          <div className="w-1/3 p-8">
             <div
               ref={ref}
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
@@ -111,7 +114,7 @@ export default () => {
               <h4>Sites web</h4>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 p-8">
             <div
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
               style={{ height: height }}
@@ -120,7 +123,7 @@ export default () => {
               <h4>Logo / Identité visuelle</h4>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 p-8">
             <div
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
               style={{ height: height }}
@@ -129,7 +132,7 @@ export default () => {
               <h4>Supports imprimés</h4>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 p-8">
             <div
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
               style={{ height: height }}
@@ -138,7 +141,7 @@ export default () => {
               <h4>Réseaux sociaux</h4>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 p-8">
             <div
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
               style={{ height: height }}
@@ -147,7 +150,7 @@ export default () => {
               <h4>Stratégie marketing</h4>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 p-8">
             <div
               className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
               style={{ height: height }}
@@ -162,8 +165,8 @@ export default () => {
             En savoir plus
           </button>
         </div>
-      </div>
-      <div className="references">
+      </section>
+      <section className="references container mx-auto">
         <div>
           <h2 className="text-left">Nos Références</h2>
 
@@ -173,12 +176,19 @@ export default () => {
             adimenda.
           </p>
         </div>
-        <div className="logo-wall relative">
-          <div className="bg absolute inset-0 z--1">
+        <div
+          className="logo-wall relative flex items-center justify-center"
+          style={{
+            background:
+              "url('/home/illu_references.svg') no-repeat center/contain",
+            height: "75vh",
+          }}
+        >
+          {/*<div className="bg absolute inset-0 z--1">
             <HeroHome3 />
-          </div>
+  </div>*/}
 
-          <div className="logos flex flex-wrap w-4/6 mx-auto">
+          <div className="logos flex flex-wrap w-4/6 mx-auto pr-40 pl-0">
             <div className="w-1/3">
               <img className="p-2" src="https://picsum.photos/300/150" />
             </div>
@@ -208,7 +218,7 @@ export default () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

@@ -6,29 +6,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Poppins:ital,wght@0,600;1,500&display=swap");
 
 /* Globals */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1216px) {
+}
+
+/* Full HD */
+@media (min-width: 1408px) {
+}
+
 html,
 body {
   min-height: 100vh;
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100vw;
+  overflow-x: initial;
 }
 
 body {
-  background: #f2f3f4;
+  background: white;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-style: responsive 12px 18px;
+  font-size: responsive 12px 18px;
+}
+
+section {
+  padding-top: 10rem;
 }
 
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  font-size: responsive 36px 48px;
 }
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   width: 100%;
   text-align: center;
+  font-size: responsive 24px 36px;
 }
 
 h3 {
@@ -37,6 +76,7 @@ h3 {
   font-style: italic;
   display: inline-block;
   position: relative;
+  font-size: responsive 18px 24px;
 }
 
 h3:before {
@@ -46,9 +86,13 @@ h3:before {
   height: 10px;
   background: #f8c8b3;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: -5px;
   z-index: -1;
+}
+
+h4 {
+  font-weight: 600;
 }
 
 .z--1 {
@@ -63,7 +107,8 @@ button {
   font-weight: 600;
   background: transparent;
   position: relative;
-  margin-left: 2em;
+  margin-right: 2em;
+  font-size: responsive 12px 14px;
 }
 
 button:before {
@@ -86,8 +131,8 @@ button:hover:before {
   transition: all 0.2s ease-in-out;
 }
 
-button:first-of-type {
-  margin-left: 0;
+.hero button:last-of-type {
+  margin-right: 0;
 }
 
 .list {
@@ -133,6 +178,36 @@ button:first-of-type {
 
 /* Header */
 
+/* Mobile */
+@media (max-width: 768px) {
+  header .logo img {
+    width: 100% !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  header .logo img {
+    width: 100% !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1215px) {
+}
+
+/* Widescreen */
+@media (min-width: 1216px) {
+}
+
+/* Full HD */
+@media (min-width: 1408px) {
+}
+
+header {
+  background: rgba(255, 255, 255, 1);
+}
+
 header .menu .menu-svg {
   height: 39px;
   margin-left: 1em;
@@ -153,7 +228,53 @@ header .menu .toggle-menu:hover .menu-svg .low {
   width: 39px;
 }
 
+header .nav {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+}
+
+header .nav-body {
+  height: 80vh;
+}
+
+header .nav-footer {
+  height: 20vh;
+}
+
 /* Footer */
+
+/* Mobile */
+@media (max-width: 768px) {
+  footer .banner {
+    height: 30vh;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  footer .banner {
+    height: 35vh;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1215px) {
+  footer .banner {
+    height: 40vh;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1216px) {
+  footer .banner {
+    height: 60vh;
+  }
+}
+
+/* Full HD */
+@media (min-width: 1408px) {
+}
 
 footer .banner object {
   position: absolute;

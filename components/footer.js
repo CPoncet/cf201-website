@@ -9,27 +9,35 @@ import Dribbble from "./svg/icons/Dribbble";
 
 function Footer() {
   return (
-    <footer className="container mx-auto">
-      <div className="banner relative mt-10">
-        <object data="/footer/banner_footer.svg"></object>
-        <div className="text text-center absolute inset-0 flex flex-col items-center justify-center">
-          <h2 className="not-italic">Votre projet</h2>
+    <footer>
+      <section>
+        <div
+          className="banner relative mt-10 flex flex-col items-center justify-center"
+          style={{
+            background:
+              "url('/footer/banner_footer.svg') no-repeat center/cover",
+          }}
+        >
+          {/*<object data="/footer/banner_footer.svg"></object>*/}
+          <div className="text text-center w-2/3">
+            <h2 className="not-italic mb-8">Votre projet</h2>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum
-            est convallis tellus fermentum lacinia nec vel tortor. Donec eros
-            leo, condimentum et neque egestas, viverra sodales nulla. Vivamus eu
-            placerat ipsum. Suspendisse vestibulum augue id malesuada
-            consectetur. Aenean vel quam erat. Quisque mattis elit sit amet
-            scelerisque interdum. Donec mollis nisi at metus lobortis, at
-            elementum ligula sollicitudin.
-          </p>
+            <p className="mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum
+              est convallis tellus fermentum lacinia nec vel tortor. Donec eros
+              leo, condimentum et neque egestas, viverra sodales nulla. Vivamus
+              eu placerat ipsum. Suspendisse vestibulum augue id malesuada
+              consectetur. Aenean vel quam erat. Quisque mattis elit sit amet
+              scelerisque interdum. Donec mollis nisi at metus lobortis, at
+              elementum ligula sollicitudin.
+            </p>
 
-          <button>Un projet ? Parlons-en !</button>
+            <button>Un projet ? Parlons-en !</button>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="rest flex">
+      <section className="rest container mx-auto flex">
         <div className="w-3/12 logo">
           <Link href="/">
             <a>
@@ -37,7 +45,7 @@ function Footer() {
             </a>
           </Link>
 
-          <p className="pl-16">
+          <p className="pl-24">
             Mentions légales
             <br />
             Tous droits réservés
@@ -46,47 +54,49 @@ function Footer() {
           </p>
         </div>
         <div className="w-2/12"></div>
-        <div className="w-7/12 social">
+        <div className="w-7/12 flex items-center justify-center social">
           <div>
-            <p className="w-full text-center italic">
-              Retrouvez-nous sur les réseaux sociaux ou sur vos portables
-              téléphoniques
-            </p>
-          </div>
-          <div className="flex">
-            <div className="w-1/5">
-              <a href="#" className="social-link">
-                <Facebook />
-              </a>
+            <div>
+              <p className="w-full text-center italic">
+                Retrouvez-nous sur les réseaux sociaux ou sur vos portables
+                téléphoniques
+              </p>
             </div>
+            <div className="flex mt-8 -mx-4">
+              <div className="flex-1 px-4">
+                <a href="#" className="social-link">
+                  <Facebook />
+                </a>
+              </div>
 
-            <div className="w-1/5">
-              <a href="#" className="social-link">
-                <Twitter />
-              </a>
-            </div>
+              <div className="flex-1 px-4">
+                <a href="#" className="social-link">
+                  <Twitter />
+                </a>
+              </div>
 
-            <div className="w-1/5">
-              <a href="#" className="social-link">
-                <Linkedin />
-              </a>
-            </div>
+              <div className="flex-1 px-4">
+                <a href="#" className="social-link">
+                  <Linkedin />
+                </a>
+              </div>
 
-            <div className="w-1/5">
-              <a href="#" className="social-link">
-                <Instagram />
-              </a>
-            </div>
+              <div className="flex-1 px-4">
+                <a href="#" className="social-link">
+                  <Instagram />
+                </a>
+              </div>
 
-            <div className="w-1/5">
-              <a href="#" className="social-link">
-                <Dribbble />
-              </a>
+              <div className="flex-1 px-4">
+                <a href="#" className="social-link">
+                  <Dribbble />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="sitemap items-center justify-center">
+      </section>
+      <div className="sitemap flex items-center justify-center mt-16 mb-16">
         <nav className="nav-sitemap">
           <ul className="list-none">
             <li className="inline-block ml-0">

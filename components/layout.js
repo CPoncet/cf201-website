@@ -4,10 +4,10 @@ import Footer from "./footer";
 
 function Layout(props) {
   return (
-    <div className={props.page}>
+    <div className={`${props.page} relative`}>
       <Header />
 
-      <main className="container mx-auto">{props.children}</main>
+      <main>{props.children}</main>
 
       <Footer />
     </div>

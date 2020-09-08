@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+
+import noScroll from "no-scroll";
 
 import { motion } from "framer-motion";
 
@@ -9,6 +11,14 @@ import { FiX } from "react-icons/fi";
 
 function Header() {
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    if (nav) {
+      noScroll.on();
+    } else {
+      noScroll.off();
+    }
+  }, [nav]);
 
   const variants = {
     open: (height = 1000) => ({
@@ -31,8 +41,8 @@ function Header() {
   };
 
   return (
-    <header className="container mx-auto">
-      <div className="flex">
+    <header className={`sticky inset-0 z-40`}>
+      <div className="flex container mx-auto">
         <div className="w-1/2 logo">
           <Link href="/">
             <a>
@@ -43,16 +53,16 @@ function Header() {
 
         <div className="menu w-1/2 flex justify-end items-center font-display font-semibold relative">
           <a
-            style={{ display: nav ? "none" : "inline-flex" }}
-            className="toggle-menu flex items-center justify-center cursor-pointer"
+            style={{ opacity: nav ? "0" : "1" }}
+            className="toggle-menu flex items-center justify-center cursor-pointer transition-opacity duration-1000 ease-in-out"
             onClick={() => setNav(!nav)}
           >
             Menu
             <Menu />
           </a>
           <a
-            style={{ display: nav ? "inline-flex" : "none" }}
-            className="close-menu absolute cursor-pointer text-white flex z-50 items-center justify-center"
+            style={{ opacity: nav ? "1" : "0" }}
+            className="close-menu absolute cursor-pointer text-white flex z-50 items-center justify-center transition-opacity duration-1000 ease-in-out"
             onClick={() => setNav(!nav)}
           >
             Fermer <FiX size="3em" />
@@ -61,11 +71,11 @@ function Header() {
       </div>
 
       <motion.nav
-        className="nav absolute inset-0 h-full w-full bg-primary z-40"
+        className="nav fixed inset-0 bg-primary z-40"
         animate={nav ? "open" : "closed"}
         variants={variants}
       >
-        <div>
+        <div className="nav-body flex items-center justify-center">
           <nav className="main-nav flex items-center justify-center">
             <ul className="list-none text-center">
               <li>
@@ -114,7 +124,7 @@ function Header() {
           </nav>
         </div>
 
-        <div className="nav-footer">
+        <div className="nav-footer flex items-center justify-center">
           <nav className="social-nav flex items-center justify-center">
             <ul className="list-none text-center">
               <li className="inline-block mr-4">
