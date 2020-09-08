@@ -384,3 +384,7 @@ footer .rest .social .social-svg:hover circle:not(.not-animated) {
 .homepage .services .icon-box svg {
   width: 25%;
 }
+
+.homepage .services .icon-box h4 {
+  text-align: center;
+}
