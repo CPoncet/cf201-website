@@ -10,7 +10,7 @@ function Layout(props) {
       <Head>
         <title>Collectif 201</title>
 
-        {process.env.NODE_ENV === "development" ? (
+        {process.env.PROJECT_STATUS === "development" ? (
           <meta name="robots" content="noindex" />
         ) : null}
       </Head>
