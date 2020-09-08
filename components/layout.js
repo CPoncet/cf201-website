@@ -9,10 +9,6 @@ function Layout(props) {
     <div className={`${props.page} relative`}>
       <Head>
         <title>Collectif 201</title>
-
-        {process.env.PROJECT_STATUS === "development" ? (
-          <meta name="robots" content="noindex" />
-        ) : null}
       </Head>
       <Header />
 
