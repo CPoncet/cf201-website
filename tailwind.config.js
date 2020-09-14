@@ -8,6 +8,7 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme("colors"),
       primary: "#f19066",
+      secondary: "#f8c8b3",
     }),
     textColor: (theme) => ({
       ...theme("colors"),

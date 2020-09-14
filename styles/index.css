@@ -67,7 +67,7 @@ h2 {
   font-weight: 600;
   width: 100%;
   text-align: center;
-  font-size: responsive 24px 36px;
+  font-size: responsive 32px 42px;
 }
 
 h3 {
@@ -76,19 +76,42 @@ h3 {
   font-style: italic;
   display: inline-block;
   position: relative;
-  font-size: responsive 18px 24px;
+  line-height: 18px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: responsive 26px 32px;
 }
 
 h3:before {
   content: "";
   display: block;
   width: 100%;
-  height: 10px;
+  height: 75%;
   background: #f8c8b3;
   position: absolute;
-  bottom: 5px;
+  bottom: -5px;
   left: -5px;
   z-index: -1;
+}
+
+h4 {
+  font-size: responsive 20px 26px;
+}
+
+.collectif-box h3 .text {
+  position: relative;
+  z-index: 1;
+}
+
+.collectif-box h3 .bg {
+  display: block;
+  width: 100%;
+  height: 75%;
+  background: #ffffff;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  z-index: 0;
 }
 
 h4 {
@@ -322,6 +345,45 @@ footer .rest .social .social-svg:hover circle:not(.not-animated) {
 
 /* Homepage */
 
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-wall {
+    background: none !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .homepage .logo-wall {
+    padding-right: 4rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) and (max-width: 1215px) {
+  .homepage .logos {
+    padding-right: 5rem;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1216px) {
+  .homepage .logos {
+    padding-right: 7rem;
+  }
+}
+
+/* Full HD */
+@media (min-width: 1408px) {
+  .homepage .logos {
+    padding-right: 10rem;
+  }
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+}
+
 @keyframes rotateLamp {
   0% {
     transform: rotate(0);
@@ -387,4 +449,8 @@ footer .rest .social .social-svg:hover circle:not(.not-animated) {
 
 .homepage .services .icon-box h4 {
   text-align: center;
+}
+
+.homepage .logo-wall {
+  height: 65vh;
 }

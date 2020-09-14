@@ -1,39 +1,15 @@
-<svg
+import React from "react";
+
+function Logo() {
+  return (
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       x="0"
       y="0"
       enableBackground="new 0 0 673 260"
       viewBox="0 0 673 260"
-    ><style type="text/css">
-	.st0{display:none;}
-	.st1{display:inline;fill:#F19066;}
-	.st2{fill:none;stroke:#342E2E;stroke-width:6;stroke-miterlimit:10;}
-	.st3{display:inline;}
-	.st4{fill:#342E2E;}
-	.st5{opacity:0.24;}
-	.st6{fill:none;stroke:#342E2E;stroke-width:0.9921;stroke-linecap:round;stroke-linejoin:round;}
-	.st7{display:inline;fill:none;}
-	.st8{fill:#303952;}
-	.st9{font-family:'RoundedElegance-Regular';}
-	.st10{font-size:72px;}
-	.st11{letter-spacing:-1;}
-	.st12{fill:#FFFFFF;}
-	.st13{display:inline;fill:none;stroke:#342E2E;stroke-width:7;stroke-miterlimit:10;}
-	.st14{display:inline;opacity:0.8;fill:#FFFFFF;}
-	.st15{display:inline;opacity:0.2;fill:#DCD7D8;}
-	.st16{display:inline;fill:#342E2E;stroke:#342E2E;stroke-miterlimit:10;}
-	.st17{fill:#F19066;}
-	.st18{display:none;fill:none;stroke:#342E2E;stroke-width:7;stroke-miterlimit:10;}
-	.st19{opacity:0.2;fill:#342E2E;}
-	.st20{opacity:0.8;fill:#FFFFFF;}
-	.st21{fill:#596275;stroke:#596275;stroke-miterlimit:10;}
-	.st22{fill:none;stroke:#342E2E;stroke-width:4;stroke-miterlimit:10;}
-	.st23{fill:#342E2E;stroke:#342E2E;stroke-miterlimit:10;}
-	.st24{fill:#596275;}
-	.st25{display:inline;stroke:#000000;stroke-miterlimit:10;}
-	.st26{display:none;opacity:0.8;fill:#FFFFFF;}
-	.st27{opacity:0.2;fill:#DCD7D8;}
-</style>
+      className="logo-svg"
+    >
       <switch>
         <g>
           <g className="st0">
@@ -295,3 +271,7 @@
         </g>
       </switch>
     </svg>
+  );
+}
+
+export default Logo;

@@ -19,7 +19,7 @@ function Footer() {
           }}
         >
           {/*<object data="/footer/banner_footer.svg"></object>*/}
-          <div className="text text-center w-2/3">
+          <div className="text text-center w-2/4">
             <h2 className="not-italic mb-8">Votre projet</h2>
 
             <p className="mb-8">
@@ -37,15 +37,15 @@ function Footer() {
         </div>
       </section>
 
-      <section className="rest container mx-auto flex">
-        <div className="w-3/12 logo">
+      <section className="rest container mx-auto flex flex-wrap">
+        <div className="w-full order-last md:order-first md:w-4/12 logo">
           <Link href="/">
             <a>
               <img src="cf201-logo.svg" />
             </a>
           </Link>
 
-          <p className="pl-24">
+          <p className="text-center md:text-left">
             Mentions légales
             <br />
             Tous droits réservés
@@ -53,8 +53,7 @@ function Footer() {
             &copy; 2020 - COLLECTIF 201
           </p>
         </div>
-        <div className="w-2/12"></div>
-        <div className="w-7/12 flex items-center justify-center social">
+        <div className="w-full mb-8 md:mb-0 md:w-8/12 flex items-center justify-center social">
           <div>
             <div>
               <p className="w-full text-center italic">
@@ -62,32 +61,32 @@ function Footer() {
                 téléphoniques
               </p>
             </div>
-            <div className="flex mt-8 -mx-4">
-              <div className="flex-1 px-4">
+            <div className="flex mt-8 md:-mx-4">
+              <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <Facebook />
                 </a>
               </div>
 
-              <div className="flex-1 px-4">
+              <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <Twitter />
                 </a>
               </div>
 
-              <div className="flex-1 px-4">
+              <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <Linkedin />
                 </a>
               </div>
 
-              <div className="flex-1 px-4">
+              <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <Instagram />
                 </a>
               </div>
 
-              <div className="flex-1 px-4">
+              <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <Dribbble />
                 </a>

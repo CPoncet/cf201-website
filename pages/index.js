@@ -1,43 +1,50 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Layout from "../components/layout";
 
-import HeroHome from "../components/svg/HeroHome";
+import Hero from "../components/parts/hero";
+import IconBox from "../components/parts/iconBox";
+
 import HeroHome2 from "../components/svg/HeroHome2";
 import HeroHome3 from "../components/svg/HeroHome3";
-import Desktop from "../components/svg/icons/Desktop";
 
 export default () => {
-  const [height, setHeight] = useState("100%");
+  const page = "homepage";
 
-  const ref = useRef();
+  const servicesIcons = [
+    { image: "desktop", text: "Sites web" },
+    { image: "logo", text: "Identité visuelle" },
+    { image: "print", text: "Supports imprimés" },
+    { image: "social", text: "Réseaux sociaux" },
+    { image: "marketing", text: "Stratégie marketing" },
+    { image: "audit", text: "Conseils" },
+  ];
 
-  useEffect(() => {
-    setHeight(ref.current.clientWidth);
-    window.addEventListener("resize", () => {
-      setHeight(ref.current.clientWidth);
-    });
-  }, [height]);
+  const referencesSettings = {
+    number: 9,
+    img: "https://picsum.photos/300/150",
+  };
+
+  const references = [];
+
+  for (var i = 0; i < referencesSettings.number; i++) {
+    references.push(referencesSettings.img);
+  }
 
   return (
-    <Layout page="homepage">
-      <section className="hero container mx-auto flex text-right">
-        <div className="text w-1/2 flex items-center pr-4">
-          <div>
-            <h1>Nous sommes à jour</h1>
+    <Layout page={page}>
+      <Hero image={page}>
+        <h1>Nous sommes à jour</h1>
 
-            <p className="mb-8">
-              Vous souhaitez l'être aussi ? Faites confiance à notre Collectif
-              pour tous vos projets de communication numérique.
-            </p>
+        <p className="mb-8">
+          Vous souhaitez l'être aussi ? Faites confiance à notre Collectif pour
+          tous vos projets de communication numérique.
+        </p>
 
-            <button href="/">Qui sommes-nous ?</button>
-            <button href="/">Un projet ? Parlons-en !</button>
-          </div>
-        </div>
-        <div className="w-1/2">
-          <HeroHome />
-        </div>
-      </section>
+        <button className="mb-4" href="/">
+          Qui sommes-nous ?
+        </button>
+        <button href="/">Un projet ? Parlons-en !</button>
+      </Hero>
       <section className="collectif container mx-auto">
         <div className="text flex items-center">
           <h2>Le Collectif</h2>
@@ -72,8 +79,8 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="engagements flex mt-8">
-          <div className="text w-1/2 flex items-center justify-center">
+        <div className="engagements flex mt-8 flex-wrap">
+          <div className="text w-full md:w-1/2 flex items-center justify-center">
             <div>
               <h3>Nos engagements et nos valeurs</h3>
               <p>Mettre l'humain au centre de nos préoccupations.</p>
@@ -88,7 +95,7 @@ export default () => {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-full order-first sm:order-last md:w-1/2">
             <HeroHome2 />
           </div>
         </div>
@@ -103,62 +110,14 @@ export default () => {
             adimenda.
           </p>
         </div>
-        <div className="flex flex-wrap p-16">
-          <div className="w-1/3 p-8">
-            <div
-              ref={ref}
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Sites web</h4>
-            </div>
-          </div>
-          <div className="w-1/3 p-8">
-            <div
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Logo / Identité visuelle</h4>
-            </div>
-          </div>
-          <div className="w-1/3 p-8">
-            <div
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Supports imprimés</h4>
-            </div>
-          </div>
-          <div className="w-1/3 p-8">
-            <div
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Réseaux sociaux</h4>
-            </div>
-          </div>
-          <div className="w-1/3 p-8">
-            <div
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Stratégie marketing</h4>
-            </div>
-          </div>
-          <div className="w-1/3 p-8">
-            <div
-              className="icon-box bg-white shadow rounded p-2 m-4 flex flex-col items-center justify-center"
-              style={{ height: height }}
-            >
-              <Desktop />
-              <h4>Conseils</h4>
-            </div>
-          </div>
+        <div className="flex flex-wrap p-0 md:p-16">
+          {servicesIcons
+            ? servicesIcons.map((icon) => (
+                <IconBox image={icon.image}>
+                  <h4>{icon.text}</h4>
+                </IconBox>
+              ))
+            : null}
         </div>
         <div className="text">
           <button className="block mx-auto" href="#">
@@ -181,41 +140,14 @@ export default () => {
           style={{
             background:
               "url('/home/illu_references.svg') no-repeat center/contain",
-            height: "75vh",
           }}
         >
-          {/*<div className="bg absolute inset-0 z--1">
-            <HeroHome3 />
-  </div>*/}
-
-          <div className="logos flex flex-wrap w-4/6 mx-auto pr-40 pl-0">
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
-            <div className="w-1/3">
-              <img className="p-2" src="https://picsum.photos/300/150" />
-            </div>
+          <div className="logos flex flex-wrap w-full sm:w-4/6  mx-auto pl-0">
+            {references.map((ref) => (
+              <div className="w-1/2 sm:w-1/3">
+                <img className="p-2" src={ref} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -9,6 +9,8 @@ import Menu from "./svg/Menu";
 
 import { FiX } from "react-icons/fi";
 
+import Logo from "../components/svg/Logo";
+
 function Header() {
   const [nav, setNav] = useState(false);
 
@@ -46,7 +48,9 @@ function Header() {
         <div className="w-1/2 logo">
           <Link href="/">
             <a>
-              <img className="w-1/2" src="cf201-logo.svg" />
+              <div className="w-1/2">
+                <Logo />
+              </div>
             </a>
           </Link>
         </div>
@@ -71,7 +75,8 @@ function Header() {
       </div>
 
       <motion.nav
-        className="nav fixed inset-0 bg-primary z-40"
+        className={`nav fixed inset-0 bg-primary z-40`}
+        initial="closed"
         animate={nav ? "open" : "closed"}
         variants={variants}
       >
@@ -79,44 +84,37 @@ function Header() {
           <nav className="main-nav flex items-center justify-center">
             <ul className="list-none text-center">
               <li>
-                <Link href="#">
+                <Link href="/">
                   <a className="font-extrabold uppercase no-underline text-white text-5xl">
                     Accueil
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="/le-collectif">
                   <a className="font-extrabold uppercase no-underline text-white text-5xl">
                     Le Collectif
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="/nos-services">
                   <a className="font-extrabold uppercase no-underline text-white text-5xl">
                     Nos services
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="/nos-realisations">
                   <a className="font-extrabold uppercase no-underline text-white text-5xl">
-                    Nos références
+                    Nos réalisations
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="#">
+                <Link href="/blog">
                   <a className="font-extrabold uppercase no-underline text-white text-5xl">
                     Blog
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="#">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
-                    Contact
                   </a>
                 </Link>
               </li>
