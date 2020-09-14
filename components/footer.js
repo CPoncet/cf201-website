@@ -36,7 +36,7 @@ function Footer() {
         <div className="w-full order-last md:order-first md:w-4/12 logo">
           <Link href="/">
             <a>
-              <SVG src="logo-cf201.svg" />
+              <SVG src="/logo-cf201.svg" />
             </a>
           </Link>
 

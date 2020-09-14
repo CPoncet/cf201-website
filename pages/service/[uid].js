@@ -12,8 +12,9 @@ export default () => {
   return (
     <Layout page={uid}>
       <Hero noImage>
-        <span>Nos services</span>
+        <span className="uppercase font-black">Nos services</span>
         <h1>Sites internet</h1>
+        <p>Lorem ipsum dolor sit amet</p>
       </Hero>
     </Layout>
   );

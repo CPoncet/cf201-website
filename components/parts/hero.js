@@ -29,7 +29,12 @@ export default (props) => {
     );
   } else {
     return (
-      <section className="hero container mx-auto flex flex-wrap text-right pt-0 sm:pt-32">
+      <section
+        className="hero container mx-auto flex flex-wrap text-right pt-32 pb-32"
+        style={{
+          background: "url('/hero-abstract.svg') no-repeat center/contain",
+        }}
+      >
         <div className="text w-full mx-0 sm:mx-auto sm:w-1/2 flex items-center justify-center">
           <div className="text-center">{props.children}</div>
         </div>

@@ -16,16 +16,6 @@ export default () => {
       </Hero>
 
       <section className="container mx-auto">
-        <div className="bg-primary rounded-lg p-4 flex justify-center mb-8">
-          <div className="w-1/2 flex ">
-            <div className="flex flex-1 justify-center">
-              <button>Sites internet</button>
-            </div>
-            <div className="flex flex-1 justify-center">
-              <button>Print</button>
-            </div>
-          </div>
-        </div>
         <div className="flex">
           <div className="w-full sm:w-1/2 md:w-1/3">
             <div className="bg-secondary rounded-lg overflow-hidden shadow">
@@ -45,17 +35,17 @@ export default () => {
       <section className="container mx-auto">
         <h2 className="mb-8">Nos références</h2>
 
-        <div className="flex">
-          <div className="w-1/4 flex justify-center">
+        <div className="flex flex-wrap">
+          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
             <img src="https://picsum.photos/150/150" alt="" />
           </div>
-          <div className="w-1/4 flex justify-center">
+          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
             <img src="https://picsum.photos/150/150" alt="" />
           </div>
-          <div className="w-1/4 flex justify-center">
+          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
             <img src="https://picsum.photos/150/150" alt="" />
           </div>
-          <div className="w-1/4 flex justify-center">
+          <div className="w-full sm:w-1/2 md:w-1/4 flex justify-center">
             <img src="https://picsum.photos/150/150" alt="" />
           </div>
         </div>

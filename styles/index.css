@@ -79,7 +79,7 @@ h3 {
   line-height: 18px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-size: responsive 26px 32px;
+  font-size: responsive 20px 32px;
 }
 
 h3:before {
@@ -263,6 +263,10 @@ header .nav-body {
 
 header .nav-footer {
   height: 20vh;
+}
+
+header .main-nav a {
+  font-size: responsive 36px 48px;
 }
 
 /* Footer */

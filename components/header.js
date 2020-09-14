@@ -40,12 +40,12 @@ function Header() {
 
   return (
     <header className={`sticky inset-0 z-40`}>
-      <div className="flex container mx-auto pt-2">
+      <div className="bar flex container mx-auto pt-2">
         <div className="w-1/2 logo">
           <Link href="/">
             <a>
-              <div className="w-1/2">
-                <SVG src="logo-cf201.svg" />
+              <div className="w-full sm:w-1/2">
+                <SVG src="/logo-cf201.svg" />
               </div>
             </a>
           </Link>
@@ -83,7 +83,7 @@ function Header() {
                 <Link href="/">
                   <a
                     onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                    className="font-extrabold uppercase no-underline text-white"
                   >
                     Accueil
                   </a>
@@ -93,7 +93,7 @@ function Header() {
                 <Link href="/le-collectif">
                   <a
                     onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                    className="font-extrabold uppercase no-underline text-white"
                   >
                     Le Collectif
                   </a>
@@ -103,7 +103,7 @@ function Header() {
                 <Link href="/nos-services">
                   <a
                     onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                    className="font-extrabold uppercase no-underline text-white"
                   >
                     Nos services
                   </a>
@@ -113,7 +113,7 @@ function Header() {
                 <Link href="/nos-realisations">
                   <a
                     onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                    className="font-extrabold uppercase no-underline text-white"
                   >
                     Nos réalisations
                   </a>
@@ -123,7 +123,7 @@ function Header() {
                 <Link href="/blog">
                   <a
                     onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                    className="font-extrabold uppercase no-underline text-white"
                   >
                     Blog
                   </a>

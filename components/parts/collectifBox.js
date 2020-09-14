@@ -6,14 +6,14 @@ export default (props) => {
   };
   return (
     <div
-      className={`collectif-box rounded-lg flex justify-end p-4 pt-24 pb-24`}
+      className={`collectif-box rounded-lg flex justify-end p-8 sm:pt-24 sm:pb-24`}
       style={{
         background: `url('${images[props.image]}') no-repeat center/cover, ${
           props.service ? "#f8c8b3" : "#f19066"
         }`,
       }}
     >
-      <div className="w-3/4">{props.children}</div>
+      <div className="w-full sm:w-3/4">{props.children}</div>
     </div>
   );
 };

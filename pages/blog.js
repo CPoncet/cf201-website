@@ -15,16 +15,16 @@ function Blog(props) {
           pour construire avec vous tous vos projets de communication numérique.
         </p>
       </Hero>
-      <section className="container mx-auto">
-        <div className="flex">
-          <div className="w-1/2">
+      <section className="container mx-auto pt-0">
+        <div className="flex flex-wrap">
+          <div className="w-full sm:w-1/2">
             <img
               className="rounded-lg"
               src="https://picsum.photos/600/300"
               alt=""
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-full sm:w-1/2">
             <h2 className="text-left mb-8">Lorem ipsum dolor sit amet</h2>
             <p className="mb-8">
               Le Collectif 201 est une équipe de créateurs dynamiques et
@@ -39,8 +39,8 @@ function Blog(props) {
       </section>
       <section className="container mx-auto">
         <div className="flex flex-wrap">
-          <div className="w-1/2 flex">
-            <div className="w-1/2 flex items-center">
+          <div className="w-full sm:w-1/2 flex flex-wrap">
+            <div className="w-full sm:w-1/2 flex items-center">
               <img
                 className="rounded-lg"
                 src="https://picsum.photos/250/250"
@@ -48,7 +48,7 @@ function Blog(props) {
               />
             </div>
 
-            <div className="w-1/2 flex items-center">
+            <div className="w-full sm:w-1/2 flex items-center">
               <div>
                 <h4 className="mb-4">Lorem ipsum dolor sit amet</h4>
 
