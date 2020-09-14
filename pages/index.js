@@ -1,11 +1,9 @@
 import React from "react";
+import SVG from "react-inlinesvg";
 import Layout from "../components/layout";
 
 import Hero from "../components/parts/hero";
 import IconBox from "../components/parts/iconBox";
-
-import HeroHome2 from "../components/svg/HeroHome2";
-import HeroHome3 from "../components/svg/HeroHome3";
 
 export default () => {
   const page = "homepage";
@@ -96,7 +94,7 @@ export default () => {
             </div>
           </div>
           <div className="w-full order-first sm:order-last md:w-1/2">
-            <HeroHome2 />
+            <SVG src="/home/collectif.svg" />
           </div>
         </div>
       </section>
@@ -138,8 +136,7 @@ export default () => {
         <div
           className="logo-wall relative flex items-center justify-center"
           style={{
-            background:
-              "url('/home/illu_references.svg') no-repeat center/contain",
+            background: "url('/home/references.svg') no-repeat center/contain",
           }}
         >
           <div className="logos flex flex-wrap w-full sm:w-4/6  mx-auto pl-0">

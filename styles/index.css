@@ -454,3 +454,8 @@ footer .rest .social .social-svg:hover circle:not(.not-animated) {
 .homepage .logo-wall {
   height: 65vh;
 }
+
+/* Le Collectif */
+.abstract {
+  height: 100%;
+}

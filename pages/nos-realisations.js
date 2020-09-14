@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 
 export default () => {
-  const page = "nos-realisations";
+  const page = "realisations";
 
   return (
     <Layout page={page}>

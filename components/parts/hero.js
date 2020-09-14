@@ -1,10 +1,13 @@
 import React from "react";
-
+import SVG from "react-inlinesvg";
 import HeroHome from "../svg/HeroHome";
 
 export default (props) => {
   const images = {
-    homepage: <HeroHome />,
+    homepage: "/home/hero-home.svg",
+    collectif: "/le-collectif/hero-collectif.svg",
+    services: "/nos-services/hero-nos-services.svg",
+    realisations: "/nos-realisations/hero-realisations.svg",
   };
 
   if (!props.noImage) {
@@ -20,7 +23,7 @@ export default (props) => {
             props.reverseOrder ? "order-first" : "order-first sm:order-last"
           }`}
         >
-          {props.image ? images[props.image] : null}
+          {props.image ? <SVG src={images[props.image]} /> : null}
         </div>
       </section>
     );

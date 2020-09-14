@@ -9,6 +9,7 @@ function Layout(props) {
     <div className={`${props.page} relative`}>
       <Head>
         <title>Collectif 201</title>
+        <meta name="robots" content="nofollow" />
       </Head>
       <Header />
 

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
+import SVG from "react-inlinesvg";
 import noScroll from "no-scroll";
 
 import { motion } from "framer-motion";
 
-import Menu from "./svg/Menu";
-
 import { FiX } from "react-icons/fi";
-
-import Logo from "../components/svg/Logo";
 
 function Header() {
   const [nav, setNav] = useState(false);
@@ -44,12 +40,12 @@ function Header() {
 
   return (
     <header className={`sticky inset-0 z-40`}>
-      <div className="flex container mx-auto">
+      <div className="flex container mx-auto pt-2">
         <div className="w-1/2 logo">
           <Link href="/">
             <a>
               <div className="w-1/2">
-                <Logo />
+                <SVG src="logo-cf201.svg" />
               </div>
             </a>
           </Link>
@@ -62,7 +58,7 @@ function Header() {
             onClick={() => setNav(!nav)}
           >
             Menu
-            <Menu />
+            <SVG src="menu2.svg" />
           </a>
           <a
             style={{ opacity: nav ? "1" : "0" }}
@@ -85,35 +81,50 @@ function Header() {
             <ul className="list-none text-center">
               <li>
                 <Link href="/">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
+                  <a
+                    onClick={() => setNav(!nav)}
+                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                  >
                     Accueil
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/le-collectif">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
+                  <a
+                    onClick={() => setNav(!nav)}
+                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                  >
                     Le Collectif
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/nos-services">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
+                  <a
+                    onClick={() => setNav(!nav)}
+                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                  >
                     Nos services
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/nos-realisations">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
+                  <a
+                    onClick={() => setNav(!nav)}
+                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                  >
                     Nos réalisations
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <a className="font-extrabold uppercase no-underline text-white text-5xl">
+                  <a
+                    onClick={() => setNav(!nav)}
+                    className="font-extrabold uppercase no-underline text-white text-5xl"
+                  >
                     Blog
                   </a>
                 </Link>

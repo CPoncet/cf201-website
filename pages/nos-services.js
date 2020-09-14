@@ -5,10 +5,10 @@ import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 import CollectifBox from "../components/parts/collectifBox";
 export default () => {
-  const page = "nos-services";
+  const page = "services";
   return (
     <Layout page={page}>
-      <Hero image="nos-services">
+      <Hero image={page}>
         <h1>Nos Services</h1>
         <p>
           Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post

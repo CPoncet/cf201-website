@@ -1,11 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
-import Facebook from "./svg/icons/Facebook";
-import Twitter from "./svg/icons/Twitter";
-import Linkedin from "./svg/icons/Linkedin";
-import Instagram from "./svg/icons/Instagram";
-import Dribbble from "./svg/icons/Dribbble";
+import SVG from "react-inlinesvg";
 
 function Footer() {
   return (
@@ -41,7 +36,7 @@ function Footer() {
         <div className="w-full order-last md:order-first md:w-4/12 logo">
           <Link href="/">
             <a>
-              <img src="cf201-logo.svg" />
+              <SVG src="logo-cf201.svg" />
             </a>
           </Link>
 
@@ -64,31 +59,31 @@ function Footer() {
             <div className="flex mt-8 md:-mx-4">
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <Facebook />
+                  <SVG src="/social/facebook.svg" />
                 </a>
               </div>
 
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <Twitter />
+                  <SVG src="/social/twitter.svg" />
                 </a>
               </div>
 
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <Linkedin />
+                  <SVG src="/social/linkedin.svg" />
                 </a>
               </div>
 
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <Instagram />
+                  <SVG src="/social/instagram.svg" />
                 </a>
               </div>
 
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <Dribbble />
+                  <SVG src="/social/dribbble.svg" />
                 </a>
               </div>
             </div>

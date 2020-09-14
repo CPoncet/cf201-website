@@ -1,11 +1,12 @@
 import React from "react";
+import SVG from "react-inlinesvg";
 import Layout from "../components/layout";
 
 import Hero from "../components/parts/hero";
 import CollectifBox from "../components/parts/collectifBox";
 
 export default () => {
-  const page = "le-collectif";
+  const page = "collectif";
 
   return (
     <Layout page={page}>
@@ -34,7 +35,7 @@ export default () => {
             </div>
           </div>
           <div className="w-1/4 flex justify-center">
-            <img src="https://picsum.photos/150/100" alt="" />
+            <SVG src="/le-collectif/abstract3.svg" />
           </div>
         </div>
         <div className="flex">
@@ -49,13 +50,13 @@ export default () => {
             </div>
           </div>
           <div className="w-1/4 flex justify-center">
-            <img src="https://picsum.photos/150/100" alt="" />
+            <SVG src="/le-collectif/abstract4.svg" />
           </div>
         </div>
       </section>
       <section className="container mx-auto">
         <div className="w-full md:w-2/3 mx-auto text-center mb-8">
-          <h3>Nos engagements & nos valeurs</h3>
+          <h3 className="mb-4">Nos engagements & nos valeurs</h3>
 
           <p>Mettre l'humain au centre de nos préoccupations</p>
         </div>
