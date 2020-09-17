@@ -1,11 +1,13 @@
 import React from "react";
+import Link from "next/link";
 import SVG from "react-inlinesvg";
 import Layout from "../components/layout";
 
 import Hero from "../components/parts/hero";
-import IconBox from "../components/parts/iconBox";
 
-export default () => {
+import { getSortOrder } from "../utils/functions";
+
+export default ({ references, services }) => {
   const page = "homepage";
 
   const servicesIcons = [
@@ -16,17 +18,6 @@ export default () => {
     { image: "marketing", text: "Stratégie marketing" },
     { image: "audit", text: "Conseils" },
   ];
-
-  const referencesSettings = {
-    number: 9,
-    img: "https://picsum.photos/300/150",
-  };
-
-  const references = [];
-
-  for (var i = 0; i < referencesSettings.number; i++) {
-    references.push(referencesSettings.img);
-  }
 
   return (
     <Layout page={page}>
@@ -109,11 +100,21 @@ export default () => {
           </p>
         </div>
         <div className="flex flex-wrap p-0 md:p-16">
-          {servicesIcons
-            ? servicesIcons.map((icon) => (
-                <IconBox image={icon.image}>
-                  <h4>{icon.text}</h4>
-                </IconBox>
+          {services
+            ? services.map((service) => (
+                <div className="w-full md:w-1/3 md:p-4 mb-4 md:mb-0">
+                  <Link href={`/service/${service.permalien}`}>
+                    <a>
+                      <div className="icon-box w-2/3 mx-auto md:w-full md:mx-0 bg-white shadow rounded p-4 flex flex-col items-center justify-center">
+                        <img
+                          src={service.icone.data["full_url"]}
+                          alt={service.titre}
+                        />
+                        <h4>{service.titre}</h4>
+                      </div>
+                    </a>
+                  </Link>
+                </div>
               ))
             : null}
         </div>
@@ -139,10 +140,16 @@ export default () => {
             background: "url('/home/references.svg') no-repeat center/contain",
           }}
         >
-          <div className="logos flex flex-wrap w-full sm:w-4/6  mx-auto pl-0">
+          <div className="logos flex flex-wrap w-full sm:w-4/6 mx-auto pl-0">
             {references.map((ref) => (
-              <div className="w-1/2 sm:w-1/3">
-                <img className="p-2" src={ref} />
+              <div key={ref.id} className="w-1/2 sm:w-1/3">
+                <a target="_blank" href={ref.url}>
+                  <img
+                    className="p-2"
+                    src={ref.logo.data["full_url"]}
+                    alt={ref.nom}
+                  />
+                </a>
               </div>
             ))}
           </div>
@@ -151,3 +158,24 @@ export default () => {
     </Layout>
   );
 };
+
+export async function getStaticProps(context) {
+  const refs = await fetch(
+    `${process.env.API_URL}items/references?fields=*,logo.data.url`
+  );
+
+  const references = await refs.json();
+
+  const servicesItems = await fetch(
+    `${process.env.API_URL}items/services?fields=*,icone.data.url`
+  );
+
+  const services = await servicesItems.json();
+
+  return {
+    props: {
+      references: references.data.sort(getSortOrder("popularite")),
+      services: services.data,
+    },
+  };
+}

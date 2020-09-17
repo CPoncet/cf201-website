@@ -6,7 +6,7 @@ export default () => {
   const page = "realisations";
 
   return (
-    <Layout page={page}>
+    <Layout>
       <Hero image={page}>
         <h1>Nos réalisations</h1>
         <p>

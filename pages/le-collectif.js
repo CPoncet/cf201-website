@@ -1,7 +1,7 @@
 import React from "react";
 import SVG from "react-inlinesvg";
-import Layout from "../components/layout";
 
+import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 import CollectifBox from "../components/parts/collectifBox";
 
@@ -9,7 +9,7 @@ export default () => {
   const page = "collectif";
 
   return (
-    <Layout page={page}>
+    <Layout>
       <Hero image={page} reverseOrder>
         <h1>Le Collectif</h1>
 

@@ -57,8 +57,7 @@ function Header() {
             className="toggle-menu flex items-center justify-center cursor-pointer transition-opacity duration-1000 ease-in-out"
             onClick={() => setNav(!nav)}
           >
-            Menu
-            <SVG src="menu2.svg" />
+            Menu <SVG className="ml-2 h-10" src="/menu.svg" />
           </a>
           <a
             style={{ opacity: nav ? "1" : "0" }}

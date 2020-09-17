@@ -13,7 +13,6 @@ function Footer() {
               "url('/footer/banner_footer.svg') no-repeat center/cover",
           }}
         >
-          {/*<object data="/footer/banner_footer.svg"></object>*/}
           <div className="text text-center w-2/4">
             <h2 className="not-italic mb-8">Votre projet</h2>
 
@@ -94,33 +93,28 @@ function Footer() {
         <nav className="nav-sitemap">
           <ul className="list-none">
             <li className="inline-block ml-0">
-              <Link href="#">
+              <Link href="/">
                 <a className="text-primary no-underline">Accueil</a>
               </Link>
             </li>
             <li className="inline-block ml-4">
-              <Link href="#">
+              <Link href="/le-collectif">
                 <a className="text-primary no-underline">Le Collectif</a>
               </Link>
             </li>
             <li className="inline-block ml-4">
-              <Link href="#">
+              <Link href="/nos-services">
                 <a className="text-primary no-underline">Nos services</a>
               </Link>
             </li>
             <li className="inline-block ml-4">
-              <Link href="#">
-                <a className="text-primary no-underline">Nos références</a>
+              <Link href="/nos-realisations">
+                <a className="text-primary no-underline">Nos réalisations</a>
               </Link>
             </li>
             <li className="inline-block ml-4">
-              <Link href="#">
+              <Link href="/blog">
                 <a className="text-primary no-underline">Blog</a>
-              </Link>
-            </li>
-            <li className="inline-block ml-4">
-              <Link href="#">
-                <a className="text-primary no-underline">Contact</a>
               </Link>
             </li>
           </ul>

@@ -19,7 +19,7 @@ export default (props) => {
           </div>
         </div>
         <div
-          className={`w-full  sm:w-1/2 ${
+          className={`w-full sm:w-1/2 ${
             props.reverseOrder ? "order-first" : "order-first sm:order-last"
           }`}
         >
@@ -30,7 +30,7 @@ export default (props) => {
   } else {
     return (
       <section
-        className="hero container mx-auto flex flex-wrap text-right pt-32 pb-32"
+        className="hero container mx-auto flex flex-wrap pt-32 pb-32"
         style={{
           background: "url('/hero-abstract.svg') no-repeat center/contain",
         }}
