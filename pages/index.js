@@ -28,11 +28,10 @@ export default ({ references, services }) => {
           Vous souhaitez l'être aussi ? Faites confiance à notre Collectif pour
           tous vos projets de communication numérique.
         </p>
-
-        <button className="mb-4" href="/">
-          Qui sommes-nous ?
-        </button>
-        <button href="/">Un projet ? Parlons-en !</button>
+        <Link href="/le-collectif">
+          <button className="mb-4">Qui sommes-nous ?</button>
+        </Link>
+        <button>Un projet ? Parlons-en !</button>
       </Hero>
       <section className="collectif container mx-auto">
         <div className="text flex items-center">
@@ -61,9 +60,12 @@ export default ({ references, services }) => {
             <div>
               <h3>Notre philosophie</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque id justo a leo aliquet viverra. Sed molestie arcu
-                at lorem tempus, sed egestas felis varius.
+                Ce que nous souhaitons mettre en avant, c’est votre projet ! Les
+                différents talents que nous rassemblons au sein du Collectif
+                sont là pour lui donner vie. En vous accompagnant dans les
+                premières esquisses jusque dans la prise en main des outils mis
+                en place, notre équipe de passionnés est à vos côtés à chaque
+                instant.
               </p>
             </div>
           </div>
@@ -79,9 +81,9 @@ export default ({ references, services }) => {
                 <li>Humain</li>
                 <li>Qualité</li>
               </ul>
-              <button className="block mx-auto" href="#">
-                En savoir plus
-              </button>
+              <Link href="/le-collectif">
+                <button className="block mx-auto">En savoir plus</button>
+              </Link>
             </div>
           </div>
           <div className="w-full order-first sm:order-last md:w-1/2">
@@ -94,9 +96,7 @@ export default ({ references, services }) => {
           <h2>Nos Services</h2>
 
           <p className="text-center">
-            Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post
-            commune si palatinarum iniusta adlocutus conperto id ille ut
-            adimenda.
+            Notre équipe de professionnels est prête à relever tous vos défis !
           </p>
         </div>
         <div className="flex flex-wrap p-0 md:p-16">
@@ -119,20 +119,18 @@ export default ({ references, services }) => {
             : null}
         </div>
         <div className="text">
-          <button className="block mx-auto" href="#">
-            En savoir plus
-          </button>
+          <Link href="/nos-services">
+            <button className="block mx-auto" href="#">
+              En savoir plus
+            </button>
+          </Link>
         </div>
       </section>
       <section className="references container mx-auto">
         <div>
           <h2 className="text-left">Nos Références</h2>
 
-          <p>
-            Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post
-            commune si palatinarum iniusta adlocutus conperto id ille ut
-            adimenda.
-          </p>
+          <p>Ils nous ont fait confiance. Pourquoi pas vous ?</p>
         </div>
         <div
           className="logo-wall relative flex items-center justify-center"

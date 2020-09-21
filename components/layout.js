@@ -10,6 +10,14 @@ function Layout(props) {
       <Head>
         <title>Collectif 201</title>
         <meta name="robots" content="nofollow" />
+
+        <script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js.hs-scripts.com/8501326.js"
+        ></script>
       </Head>
       <Header />
 

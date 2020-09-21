@@ -17,13 +17,10 @@ function Footer() {
             <h2 className="not-italic mb-8">Votre projet</h2>
 
             <p className="mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum
-              est convallis tellus fermentum lacinia nec vel tortor. Donec eros
-              leo, condimentum et neque egestas, viverra sodales nulla. Vivamus
-              eu placerat ipsum. Suspendisse vestibulum augue id malesuada
-              consectetur. Aenean vel quam erat. Quisque mattis elit sit amet
-              scelerisque interdum. Donec mollis nisi at metus lobortis, at
-              elementum ligula sollicitudin.
+              Nous avons hâte de découvrir votre prochain projet ! Vous en avez
+              une idée floue, ou au contraire, vous êtes à un stade avancé de
+              réflexion ? Notre collectif vous accompagne à n'importe quelle
+              étape de votre projet, en prenant en compte votre environnement.
             </p>
 
             <button>Un projet ? Parlons-en !</button>
@@ -40,7 +37,11 @@ function Footer() {
           </Link>
 
           <p className="text-center md:text-left">
-            Mentions légales
+            <Link href="/mentions-legales">
+              <a className="text-primary underline font-semibold">
+                Mentions légales
+              </a>
+            </Link>
             <br />
             Tous droits réservés
             <br />
@@ -48,11 +49,10 @@ function Footer() {
           </p>
         </div>
         <div className="w-full mb-8 md:mb-0 md:w-8/12 flex items-center justify-center social">
-          <div>
+          <div className="w-full md:w-8/12">
             <div>
               <p className="w-full text-center italic">
-                Retrouvez-nous sur les réseaux sociaux ou sur vos portables
-                téléphoniques
+                Retrouvez-nous sur les réseaux sociaux !
               </p>
             </div>
             <div className="flex mt-8 md:-mx-4">
@@ -77,12 +77,6 @@ function Footer() {
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
                   <SVG src="/social/instagram.svg" />
-                </a>
-              </div>
-
-              <div className="flex-1 px-0 md:px-4">
-                <a href="#" className="social-link">
-                  <SVG src="/social/dribbble.svg" />
                 </a>
               </div>
             </div>

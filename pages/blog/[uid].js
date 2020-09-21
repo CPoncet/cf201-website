@@ -4,7 +4,6 @@ import parse from "html-react-parser";
 import Layout from "../../components/layout";
 
 import Hero from "../../components/parts/hero";
-import Service from "../service/[uid]";
 
 const BlogPost = ({ articles, article }) => {
   return (

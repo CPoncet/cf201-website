@@ -59,13 +59,6 @@ function Header() {
           >
             Menu <SVG className="ml-2 h-10" src="/menu.svg" />
           </a>
-          <a
-            style={{ opacity: nav ? "1" : "0" }}
-            className="close-menu absolute cursor-pointer text-white flex z-50 items-center justify-center transition-opacity duration-1000 ease-in-out"
-            onClick={() => setNav(!nav)}
-          >
-            Fermer <FiX size="3em" />
-          </a>
         </div>
       </div>
 
@@ -75,6 +68,15 @@ function Header() {
         animate={nav ? "open" : "closed"}
         variants={variants}
       >
+        <div className="relative">
+          <a
+            style={{ opacity: nav ? "1" : "0" }}
+            className="close-menu absolute right-0 cursor-pointer text-white flex z-50 items-center justify-center transition-opacity duration-1000 ease-in-out"
+            onClick={() => setNav(!nav)}
+          >
+            Fermer <FiX size="3em" />
+          </a>
+        </div>
         <div className="nav-body flex items-center justify-center">
           <nav className="main-nav flex items-center justify-center">
             <ul className="list-none text-center">
