@@ -11,8 +11,9 @@ export default ({ services }) => {
       <Hero image={page}>
         <h1>Nos Services</h1>
         <p>
-          Lorem ipsum dolor sit amet montius advocatos deiectas lenitatem post
-          commune si palatinarum iniusta adlocutus conperto id ille ut adimenda.
+          Pour chacune de nos prestations, et selon l'ampleur de votre projet,
+          une équipe de professionnels est constituée et a pour mission de
+          réaliser le produit le plus approprié.
         </p>
       </Hero>
       <section className="container mx-auto">
@@ -38,9 +39,9 @@ export default ({ services }) => {
 
               <p className="mb-4">{service.intro}</p>
 
-              <Link href={`/service/${service.permalien}`}>
+              {/*<Link href={`/service/${service.permalien}`}>
                 <button>En savoir plus</button>
-              </Link>
+          </Link>*/}
             </div>
           </div>
         ))}

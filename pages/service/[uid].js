@@ -6,6 +6,9 @@ import Layout from "../../components/layout";
 import Hero from "../../components/parts/hero";
 
 const Service = ({ services, service }) => {
+  return null;
+
+  /*
   return (
     <Layout page={`service ${service.permalien}`}>
       <Hero noImage>
@@ -45,8 +48,10 @@ const Service = ({ services, service }) => {
       </section>
     </Layout>
   );
+  */
 };
 
+/*
 export async function getStaticPaths() {
   const servicesItem = await fetch(`${process.env.API_URL}items/services`);
   const services = await servicesItem.json();
@@ -86,5 +91,5 @@ export async function getStaticProps(context) {
     },
   };
 }
-
+*/
 export default Service;

@@ -103,17 +103,17 @@ export default ({ references, services }) => {
           {services
             ? services.map((service) => (
                 <div className="w-full md:w-1/3 md:p-4 mb-4 md:mb-0">
-                  <Link href={`/service/${service.permalien}`}>
-                    <a>
-                      <div className="icon-box w-2/3 mx-auto md:w-full md:mx-0 bg-white shadow rounded p-4 flex flex-col items-center justify-center">
-                        <img
-                          src={service.icone.data["full_url"]}
-                          alt={service.titre}
-                        />
-                        <h4>{service.titre}</h4>
-                      </div>
-                    </a>
-                  </Link>
+                  {/*<Link href={`/service/${service.permalien}`}>
+                    <a>*/}
+                  <div className="icon-box w-2/3 mx-auto md:w-full md:mx-0 bg-white shadow rounded p-4 flex flex-col items-center justify-center">
+                    <img
+                      src={service.icone.data["full_url"]}
+                      alt={service.titre}
+                    />
+                    <h4>{service.titre}</h4>
+                  </div>
+                  {/*</a>
+                  </Link>*/}
                 </div>
               ))
             : null}

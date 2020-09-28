@@ -2,7 +2,9 @@ import React from "react";
 import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 
-export default () => {
+import { getSortOrder } from "../utils/functions";
+
+export default ({ references }) => {
   const page = "realisations";
 
   return (
@@ -36,20 +38,38 @@ export default () => {
         <h2 className="mb-8">Nos références</h2>
 
         <div className="flex flex-wrap">
-          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
-            <img src="https://picsum.photos/150/150" alt="" />
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
-            <img src="https://picsum.photos/150/150" alt="" />
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center">
-            <img src="https://picsum.photos/150/150" alt="" />
-          </div>
-          <div className="w-full sm:w-1/2 md:w-1/4 flex justify-center">
-            <img src="https://picsum.photos/150/150" alt="" />
-          </div>
+          {references.map((ref) => (
+            <div
+              key={ref.id}
+              className="w-full sm:w-1/2 md:w-1/4 mb-4 sm:mb-0 flex justify-center"
+            >
+              <a target="_blank" href={ref.url}>
+                <img
+                  className="p-2"
+                  src={ref.logo.data["full_url"]}
+                  alt={ref.nom}
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </section>
     </Layout>
   );
 };
+
+export async function getStaticProps(context) {
+  const refs = await fetch(
+    `${process.env.API_URL}items/references?fields=*,logo.data.url`
+  );
+
+  const references = await refs.json();
+
+  const sort = references.data.sort(getSortOrder("popularite"));
+
+  return {
+    props: {
+      references: sort.slice(0, 4),
+    },
+  };
+}
