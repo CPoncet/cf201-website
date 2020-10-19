@@ -22,8 +22,6 @@ function Footer() {
               réflexion ? Notre collectif vous accompagne à n'importe quelle
               étape de votre projet, en prenant en compte votre environnement.
             </p>
-
-            <button>Un projet ? Parlons-en !</button>
           </div>
         </div>
       </section>
@@ -64,12 +62,6 @@ function Footer() {
 
               <div className="flex-1 px-0 md:px-4">
                 <a href="#" className="social-link">
-                  <SVG src="/social/twitter.svg" />
-                </a>
-              </div>
-
-              <div className="flex-1 px-0 md:px-4">
-                <a href="#" className="social-link">
                   <SVG src="/social/linkedin.svg" />
                 </a>
               </div>
@@ -99,16 +91,6 @@ function Footer() {
             <li className="inline-block ml-4">
               <Link href="/nos-services">
                 <a className="text-primary no-underline">Nos services</a>
-              </Link>
-            </li>
-            <li className="inline-block ml-4">
-              <Link href="/nos-realisations">
-                <a className="text-primary no-underline">Nos réalisations</a>
-              </Link>
-            </li>
-            <li className="inline-block ml-4">
-              <Link href="/blog">
-                <a className="text-primary no-underline">Blog</a>
               </Link>
             </li>
           </ul>

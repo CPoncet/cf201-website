@@ -352,9 +352,6 @@ footer .banner object {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  miw: 100%;
-  w: 150%;
-  h: 35vh;
 }
 
 footer .rest .social .social-svg .st0 {

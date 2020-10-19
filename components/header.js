@@ -110,50 +110,27 @@ function Header() {
                   </a>
                 </Link>
               </li>
-              <li>
-                <Link href="/nos-realisations">
-                  <a
-                    onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white"
-                  >
-                    Nos réalisations
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <a
-                    onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white"
-                  >
-                    Blog
-                  </a>
-                </Link>
-              </li>
             </ul>
           </nav>
         </div>
 
         <div className="nav-footer flex items-center justify-center">
-          <nav className="social-nav flex items-center justify-center">
-            <ul className="list-none text-center">
-              <li className="inline-block mr-4">
-                <a
-                  className="no-underline text-white"
-                  href="https://facebook.com"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li className="inline-block">
-                <a
-                  className="no-underline text-white"
-                  href="https://facebook.com"
-                >
-                  Twitter
-                </a>
-              </li>
-            </ul>
+          <nav className="w-1/2 md:w-1/6 social-nav flex items-center justify-center">
+            <div className="flex-1">
+              <a href="#" className="social-link">
+                <SVG src="/social/white/facebook.svg" />
+              </a>
+            </div>
+            <div className="flex-1 ml-4">
+              <a href="#" className="social-link">
+                <SVG src="/social/white/linkedin.svg" />
+              </a>
+            </div>
+            <div className="flex-1 ml-4">
+              <a href="#" className="social-link">
+                <SVG src="/social/white/instagram.svg" />
+              </a>
+            </div>
           </nav>
         </div>
       </motion.nav>

@@ -54,6 +54,7 @@ export default () => {
           </div>
         </div>
       </section>
+
       <section className="container mx-auto">
         <div className="w-full md:w-2/3 mx-auto text-center mb-8">
           <h3 className="mb-4">Nos engagements & nos valeurs</h3>

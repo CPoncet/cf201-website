@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import SVG from "react-inlinesvg";
 import Layout from "../components/layout";
@@ -9,15 +9,6 @@ import { getSortOrder } from "../utils/functions";
 
 export default ({ references, services }) => {
   const page = "homepage";
-
-  const servicesIcons = [
-    { image: "desktop", text: "Sites web" },
-    { image: "logo", text: "Identité visuelle" },
-    { image: "print", text: "Supports imprimés" },
-    { image: "social", text: "Réseaux sociaux" },
-    { image: "marketing", text: "Stratégie marketing" },
-    { image: "audit", text: "Conseils" },
-  ];
 
   return (
     <Layout page={page}>
@@ -31,7 +22,6 @@ export default ({ references, services }) => {
         <Link href="/le-collectif">
           <button className="mb-4">Qui sommes-nous ?</button>
         </Link>
-        <button>Un projet ? Parlons-en !</button>
       </Hero>
       <section className="collectif container mx-auto">
         <div className="text flex items-center">
@@ -130,7 +120,9 @@ export default ({ references, services }) => {
         <div>
           <h2 className="text-left">Nos Références</h2>
 
-          <p>Ils nous ont fait confiance. Pourquoi pas vous ?</p>
+          <p className="mb-16">
+            Ils nous ont fait confiance. Pourquoi pas vous ?
+          </p>
         </div>
         <div
           className="logo-wall relative flex items-center justify-center"
