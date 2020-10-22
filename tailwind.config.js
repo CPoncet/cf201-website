@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*{.js, jsx}"],
+  purge: [],
   theme: {
     fontFamily: {
       display: ["Poppins", "sans-serif"],
