@@ -24,10 +24,11 @@ export default () => {
             <div>
               <h3>Notre expertise</h3>
               <p>
-                En fonction de votre demande, votre chargé de projet compose une
-                équipe de professionnels et communique avec eux tout au long de
-                la vie du projet. Vous n'avez pas à vous occuper des détails
-                techniques de chacun des métiers concernés.
+                En fonction de votre demande, la personne dédiée à la mise en
+                œuvre de votre projet compose une équipe de professionnels et
+                communique avec eux tout au long de la vie du projet. Vous
+                n'avez pas à vous occuper des détails techniques de chacun des
+                métiers concernés.
               </p>
             </div>
           </div>
@@ -66,13 +67,13 @@ export default () => {
           <h4>Accompagnement</h4>
 
           <p>
-            Plus qu’un simple contact, nous vous propons d’établir une véritable
-            relation de confiance avec un accompagnement dédié à chaque étape de
-            votre projet. Nous réduisons au maximum le nombre d'interlocuteurs
-            afin de rendre le projet fluide, du cahier des charges à la
-            livraison finale. Dans la plupart des situations, vous serez en
-            contact avec un chargé de projet qui prendra en compte vos demandes
-            et les transmettra à l'équipe projet.
+            Plus qu’un simple contact, nous vous proposons d’établir une
+            véritable relation de confiance avec un accompagnement dédié à
+            chaque étape de votre projet. Nous réduisons au maximum le nombre
+            d'interlocuteurs afin de rendre le projet fluide, du cahier des
+            charges à la livraison finale. Dans la plupart des situations, vous
+            serez en contact avec un chargé de projet qui prendra en compte vos
+            demandes et les transmettra à l'équipe projet.
           </p>
         </CollectifBox>
 

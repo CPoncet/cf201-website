@@ -19,6 +19,7 @@
     "no-scroll": "^2.1.1",
     "normalize.css": "^8.0.1",
     "react": "16.13.1",
+    "react-device-detect": "^1.14.0",
     "react-dom": "16.13.1",
     "react-hooks-paginator": "^0.4.4",
     "react-icons": "^3.10.0",

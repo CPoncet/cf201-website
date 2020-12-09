@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { isMobile } from "react-device-detect";
 import Link from "next/link";
 import SVG from "react-inlinesvg";
 import Layout from "../components/layout";
@@ -9,6 +10,10 @@ import { getSortOrder } from "../utils/functions";
 
 export default ({ references, services }) => {
   const page = "homepage";
+
+  if (isMobile) {
+    references = references.slice(0, 6);
+  }
 
   return (
     <Layout page={page}>
