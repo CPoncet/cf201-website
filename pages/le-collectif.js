@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 import CollectifBox from "../components/parts/collectifBox";
 
-export default () => {
+const Collectif = () => {
   const page = "collectif";
 
   return (
@@ -115,3 +115,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Collectif;

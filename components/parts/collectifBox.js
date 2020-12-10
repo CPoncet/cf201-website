@@ -1,6 +1,6 @@
 import React from "react";
 
-export default (props) => {
+const CollectifBox = (props) => {
   const images = {
     accompagnement: "/le-collectif/collectif-1.svg",
     rse: "/le-collectif/collectif-2.svg",
@@ -20,3 +20,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default CollectifBox;

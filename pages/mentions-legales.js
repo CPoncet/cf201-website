@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 
 import Hero from "../components/parts/hero";
 
-export default () => {
+const MentionsLegales = () => {
   return (
     <Layout page={`mentions-legales`}>
       <Hero noImage>
@@ -195,3 +195,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default MentionsLegales;

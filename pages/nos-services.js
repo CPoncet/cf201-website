@@ -4,7 +4,8 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import Hero from "../components/parts/hero";
 import CollectifBox from "../components/parts/collectifBox";
-export default ({ services }) => {
+
+const NosServices = ({ services }) => {
   const page = "services";
   return (
     <Layout>
@@ -17,8 +18,9 @@ export default ({ services }) => {
         </p>
       </Hero>
       <section className="container mx-auto">
-        {services.map((service) => (
+        {services.map((service, index) => (
           <div
+            key={`${service.titre}-${index}`}
             className={`collectif-box mb-4 rounded-lg flex justify-end p-8 sm:pt-24 sm:pb-24`}
             style={{
               background: `url('') no-repeat center/cover, #f8c8b3`,
@@ -63,3 +65,5 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+export default NosServices;

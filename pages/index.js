@@ -8,7 +8,7 @@ import Hero from "../components/parts/hero";
 
 import { getSortOrder } from "../utils/functions";
 
-export default ({ references, services }) => {
+const Home = ({ references, services }) => {
   const page = "homepage";
 
   if (isMobile) {
@@ -96,8 +96,11 @@ export default ({ references, services }) => {
         </div>
         <div className="flex flex-wrap p-0 md:p-16">
           {services
-            ? services.map((service) => (
-                <div className="w-full md:w-1/3 md:p-4 mb-4 md:mb-0">
+            ? services.map((service, index) => (
+                <div
+                  key={`${service.titre}-${index}`}
+                  className="w-full md:w-1/3 md:p-4 mb-4 md:mb-0"
+                >
                   {/*<Link href={`/service/${service.permalien}`}>
                     <a>*/}
                   <div className="icon-box w-2/3 mx-auto md:w-full md:mx-0 bg-white shadow rounded p-4 flex flex-col items-center justify-center">
@@ -174,3 +177,5 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+export default Home;
