@@ -15,11 +15,13 @@ const MediaText = ({ data }) => {
                 className={`w-full ${
                   item.image_col_size === "1/4" ? "md:w-1/4" : "md:w-1/2"
                 } image flex justify-center ${
-                  item.media_right ? "order-last" : "mr-8 sm:order-first"
+                  item.media_right
+                    ? "mr-8 order-first md:order-last"
+                    : "order-last"
                 }`}
               >
                 {item.media_type === "image" ? (
-                  <img className={`w-full`} src={item.image} />
+                  <img className={`w-1/2 md:w-full`} src={item.image} />
                 ) : (
                   parse(item.video)
                 )}

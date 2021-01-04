@@ -35,7 +35,7 @@ const Hero = ({ data }) => {
         </div>
         <div
           className={`w-full sm:w-1/2 ${
-            data.media_right ? "order-last" : "order-last sm:order-first"
+            data.media_right ? "order-first sm:order-last" : "order-first"
           }`}
         >
           {data.media_type === "image" ? (
