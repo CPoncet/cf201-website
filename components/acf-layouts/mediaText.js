@@ -19,12 +19,7 @@ const MediaText = ({ data }) => {
                 }`}
               >
                 {item.media_type === "image" ? (
-                  <img
-                    className={`w-full ${
-                      item.image_col_size === "1/4" ? "md:w-1/4" : "md:w-1/2"
-                    }`}
-                    src={item.image}
-                  />
+                  <img className={`w-full`} src={item.image} />
                 ) : (
                   parse(item.video)
                 )}
