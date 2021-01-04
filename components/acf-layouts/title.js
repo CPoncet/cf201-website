@@ -22,7 +22,7 @@ const Title = ({ data }) => {
   };
 
   return (
-    <section className="container mx-auto pb-0">
+    <section className="container mx-auto pb-0 text-center">
       {titleType(data.title_type, data.section_title)}
       {parse(data.section_intro)}
     </section>
