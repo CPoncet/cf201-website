@@ -12,8 +12,8 @@ const MediaText = ({ data }) => {
               className="flex flex-col md:flex-row mt-8"
             >
               <div
-                className={`w-full md:w-${
-                  item.image_col_size
+                className={`w-full ${
+                  item.image_col_size === "1/4" ? "md:w-1/4" : "md:w-1/2"
                 } image flex justify-center ${
                   item.media_right ? "order-last" : "mr-8 sm:order-first"
                 }`}
