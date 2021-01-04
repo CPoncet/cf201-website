@@ -4,9 +4,9 @@ import Footer from "./footer";
 
 import Head from "next/head";
 
-function Layout(props) {
+function Layout({ page, children, options }) {
   return (
-    <div className={`${props.page} relative`}>
+    <div className={`${page} relative`}>
       <Head>
         <title>Collectif 201</title>
         <meta name="robots" content="nofollow" />
@@ -35,12 +35,29 @@ function Layout(props) {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+
+        {options.custom_scripts ? (
+          <script>{options.custom_scripts}</script>
+        ) : null}
+
+        {options.custom_styles ? <style>{options.custom_styles}</style> : null}
       </Head>
-      <Header />
+      <Header
+        mainLogo={options.main_logo}
+        mainMenu={options.main_menu}
+        social={options.social}
+      />
 
-      <main>{props.children}</main>
+      <main>{children}</main>
 
-      <Footer />
+      <Footer
+        mainLogo={options.main_logo}
+        mainMenu={options.main_menu}
+        legalMenu={options.legal_menu}
+        introRs={options.intro_rs}
+        social={options.social}
+        text={options.footer_text}
+      />
     </div>
   );
 }

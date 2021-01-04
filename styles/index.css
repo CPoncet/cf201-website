@@ -54,7 +54,7 @@ body {
 }
 
 section {
-  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 p {
@@ -387,6 +387,10 @@ footer .rest .social .social-svg circle {
 footer .rest .social .social-svg:hover circle:not(.not-animated) {
   transform: translate(-20px, -21px);
   transition: all 0.2s ease-in-out;
+}
+
+footer .legal-menu {
+  display: block;
 }
 
 /* Homepage */

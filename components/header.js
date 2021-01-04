@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { FiX } from "react-icons/fi";
 
-function Header() {
+function Header({ mainLogo, mainMenu, social }) {
   const [nav, setNav] = useState(false);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function Header() {
           <Link href="/">
             <a>
               <div className="w-full sm:w-1/2">
-                <SVG src="/logo-cf201.svg" />
+                <img src={mainLogo} alt="logo" />
               </div>
             </a>
           </Link>
@@ -78,60 +78,47 @@ function Header() {
           </a>
         </div>
         <div className="nav-body flex items-center justify-center">
-          <nav className="main-nav flex items-center justify-center">
-            <ul className="list-none text-center">
-              <li>
-                <Link href="/">
-                  <a
-                    onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white"
-                  >
-                    Accueil
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/le-collectif">
-                  <a
-                    onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white"
-                  >
-                    Le Collectif
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/nos-services">
-                  <a
-                    onClick={() => setNav(!nav)}
-                    className="font-extrabold uppercase no-underline text-white"
-                  >
-                    Nos services
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          {mainMenu ? (
+            <nav className="main-nav flex items-center justify-center">
+              <ul className="list-none text-center">
+                {mainMenu.map((link, index) => (
+                  <li key={`${link.text}-${index}`}>
+                    <Link
+                      href={link.is_homepage ? "/" : `/${link.link.post_name}`}
+                    >
+                      <a
+                        onClick={() => setNav(!nav)}
+                        className="font-extrabold uppercase no-underline text-white"
+                      >
+                        {link.text}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </div>
 
         <div className="nav-footer flex items-center justify-center">
-          <nav className="w-1/2 md:w-1/6 social-nav flex items-center justify-center">
-            <div className="flex-1">
-              <a href="#" className="social-link">
-                <SVG src="/social/white/facebook.svg" />
-              </a>
-            </div>
-            <div className="flex-1 ml-4">
-              <a href="#" className="social-link">
-                <SVG src="/social/white/linkedin.svg" />
-              </a>
-            </div>
-            <div className="flex-1 ml-4">
-              <a href="#" className="social-link">
-                <SVG src="/social/white/instagram.svg" />
-              </a>
-            </div>
-          </nav>
+          {social ? (
+            <nav className="w-1/2 md:w-1/6 social-nav flex items-center justify-center">
+              {social.map((item, index) => {
+                return (
+                  <div
+                    key={`${item.name}-${index}`}
+                    className={`flex-1 ${index === 0 ? "" : "ml-4"}`}
+                  >
+                    <Link href={item.link} className="social-link">
+                      <a target="_blank">
+                        <img src={item.white_icon} alt={item.name} />
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </nav>
+          ) : null}
         </div>
       </motion.nav>
     </header>
