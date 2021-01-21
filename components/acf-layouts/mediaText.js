@@ -17,7 +17,7 @@ const MediaText = ({ data }) => {
                 } image flex justify-center ${
                   item.media_right
                     ? "mr-8 order-first md:order-last"
-                    : "order-last"
+                    : "order-first"
                 }`}
               >
                 {item.media_type === "image" ? (
