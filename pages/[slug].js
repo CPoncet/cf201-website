@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import Loader from "../components/loader";
 import PageBuilder from "../components/pageBuilder";
 import { useRouter } from "next/router";
+import Custom404 from "./404";
 
 const Page = () => {
   const router = useRouter();
@@ -30,6 +31,10 @@ const Page = () => {
 
   if (pageLoading || optionsLoading) {
     return <Loader />;
+  }
+
+  if (!pageData.page) {
+    return <Custom404 />;
   }
 
   let page = pageData.page;
