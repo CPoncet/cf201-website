@@ -83,9 +83,7 @@ function Header({ mainLogo, mainMenu, social }) {
               <ul className="list-none text-center">
                 {mainMenu.map((link, index) => (
                   <li key={`${link.text}-${index}`}>
-                    <Link
-                      href={link.is_homepage ? "/" : `/${link.link.post_name}`}
-                    >
+                    <Link href={link.isHomepage ? "/" : `/${link.link.slug}`}>
                       <a
                         onClick={() => setNav(!nav)}
                         className="font-extrabold uppercase no-underline text-white"
@@ -111,7 +109,7 @@ function Header({ mainLogo, mainMenu, social }) {
                   >
                     <Link href={item.link} className="social-link">
                       <a target="_blank">
-                        <img src={item.white_icon} alt={item.name} />
+                        <img src={item.whiteIcon.sourceUrl} alt={item.name} />
                       </a>
                     </Link>
                   </div>

@@ -36,27 +36,27 @@ function Layout({ page, children, options }) {
           href="/favicon-16x16.png"
         />
 
-        {options.custom_scripts ? (
-          <script>{options.custom_scripts}</script>
+        {options.customScripts ? (
+          <script>{options.customScripts}</script>
         ) : null}
 
-        {options.custom_styles ? <style>{options.custom_styles}</style> : null}
+        {options.customStyles ? <style>{options.customStyles}</style> : null}
       </Head>
       <Header
-        mainLogo={options.main_logo}
-        mainMenu={options.main_menu}
+        mainLogo={options.mainLogo.sourceUrl}
+        mainMenu={options.mainMenu}
         social={options.social}
       />
 
       <main>{children}</main>
 
       <Footer
-        mainLogo={options.main_logo}
-        mainMenu={options.main_menu}
-        legalMenu={options.legal_menu}
-        introRs={options.intro_rs}
+        mainLogo={options.mainLogo.sourceUrl}
+        mainMenu={options.mainMenu}
+        legalMenu={options.legalMenu}
+        introRs={options.introRs}
         social={options.social}
-        text={options.footer_text}
+        text={options.footerText}
       />
     </div>
   );

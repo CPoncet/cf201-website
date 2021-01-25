@@ -26,13 +26,13 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                       <Link
                         key={`${button.text}-${index}`}
                         href={
-                          button.internal_link
-                            ? button.internal_link.post_name
-                            : button.external_link
+                          button.internalLink
+                            ? button.internalLink.slug
+                            : button.externalLink
                         }
                       >
                         <button
-                          target={button.internal_link ? "_self" : "_blank"}
+                          target={button.internalLink ? "_self" : "_blank"}
                           className="mb-4"
                         >
                           {button.text}
@@ -59,7 +59,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
               ? legalMenu.map((item, index) => (
                   <Link
                     key={`${item.text}-${index}`}
-                    href={`/${item.link.post_name}`}
+                    href={`/${item.link.slug}`}
                     className="legal-menu"
                   >
                     <a className="text-primary underline font-semibold">
@@ -88,7 +88,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                   >
                     <Link href={item.link} className="social-link">
                       <a target="_blank">
-                        <img src={item.icone} alt={item.name} />
+                        <img src={item.icone.sourceUrl} alt={item.name} />
                       </a>
                     </Link>
                   </div>
@@ -107,9 +107,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                   key={`${item.text}-${index}`}
                   className={`inline-block ${index === 0 ? "ml-0" : "ml-4"}`}
                 >
-                  <Link
-                    href={item.is_homepage ? "/" : `/${item.link.post_name}`}
-                  >
+                  <Link href={item.isHomepage ? "/" : `/${item.link.slug}`}>
                     <a className="text-primary no-underline">{item.text}</a>
                   </Link>
                 </li>

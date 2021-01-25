@@ -10,58 +10,58 @@ import Text from "./acf-layouts/text";
 const PageBuilder = ({ page }) => {
   return (
     <>
-      {page.acf.builder
-        ? page.acf.builder.map((element, index) => {
-            switch (element.acf_fc_layout) {
-              case "hero":
+      {page.builder
+        ? page.builder.map((element, index) => {
+            switch (element.fieldGroupName) {
+              case "page_Builder_Builder_Hero":
                 if (!element.title) {
                   element.title = page.title.rendered;
                 }
                 return (
                   <Hero
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "titrage":
+              case "page_Builder_Builder_Titrage":
                 return (
                   <Title
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "text_content":
+              case "page_Builder_Builder_TextContent":
                 return (
                   <Text
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "media_text":
+              case "page_Builder_Builder_MediaText":
                 return (
                   <MediaText
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "cards":
+              case "page_Builder_Builder_Cards":
                 return (
                   <Cards
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "blocs_orange_fonce":
+              case "page_Builder_Builder_BlocsOrangeFonce":
                 return (
                   <BlocsOrangeFonce
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );
-              case "blocs_orange_clair":
+              case "page_Builder_Builder_BlocsOrangeClair":
                 return (
                   <BlocsOrangeClair
-                    key={`${element.acf_fc_layout}-${index}`}
+                    key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
                 );

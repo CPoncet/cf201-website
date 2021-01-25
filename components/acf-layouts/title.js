@@ -23,8 +23,8 @@ const Title = ({ data }) => {
 
   return (
     <section className="container mx-auto pb-0 text-center">
-      {titleType(data.title_type, data.section_title)}
-      {parse(data.section_intro)}
+      {titleType(data.titleType, data.sectionTitle)}
+      {data.sectionIntro ? parse(data.sectionIntro) : null}
     </section>
   );
 };

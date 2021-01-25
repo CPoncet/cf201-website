@@ -5,30 +5,33 @@ import parse from "html-react-parser";
 const MediaText = ({ data }) => {
   return (
     <section className="container mx-auto">
-      {data.media_text
-        ? data.media_text.map((item, index) => (
+      {data.mediaText
+        ? data.mediaText.map((item, index) => (
             <div
               key={`${item.title}-${index}`}
               className="flex flex-col md:flex-row mt-8"
             >
               <div
                 className={`w-full ${
-                  item.image_col_size === "1/4" ? "md:w-1/4" : "md:w-1/2"
+                  item.imageColSize === "1/4" ? "md:w-1/4" : "md:w-1/2"
                 } image flex justify-center ${
-                  item.media_right
+                  item.mediaRight
                     ? "mr-8 order-first md:order-last"
                     : "order-first"
                 }`}
               >
-                {item.media_type === "image" ? (
-                  <img className={`w-1/2 md:w-full`} src={item.image} />
+                {item.mediaType === "image" ? (
+                  <img
+                    className={`w-1/2 md:w-full`}
+                    src={item.image.sourceUrl}
+                  />
                 ) : (
                   parse(item.video)
                 )}
               </div>
               <div
                 className={`w-full ${
-                  item.image_col_size === "1/4" ? "md:w-3/4" : "md:w-1/2"
+                  item.imageColSize === "1/4" ? "md:w-3/4" : "md:w-1/2"
                 } flex items-center`}
               >
                 <div>
@@ -41,15 +44,15 @@ const MediaText = ({ data }) => {
                           <Link
                             key={`${button.text}-${index}`}
                             href={
-                              button.internal_link
-                                ? button.internal_link.post_name
-                                : button.external_link
+                              button.internalLink
+                                ? button.internalLink.slug
+                                : button.externalLink
                             }
                           >
                             <button className="mb-4">
                               <a
                                 target={
-                                  button.internal_link ? "_self" : "_blank"
+                                  button.internalLink ? "_self" : "_blank"
                                 }
                               >
                                 {button.text}

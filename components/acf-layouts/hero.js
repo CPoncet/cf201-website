@@ -3,11 +3,11 @@ import Link from "next/link";
 import parse from "html-react-parser";
 
 const Hero = ({ data }) => {
-  if (data.media_type !== "aucun") {
+  if (data.mediaType !== "aucun") {
     return (
       <section className="hero container mx-auto flex flex-wrap text-right pt-0 sm:pt-32">
         <div className="text w-full sm:w-1/2 flex items-center pr-4">
-          <div className={`${data.media_right ? "" : "text-center"}`}>
+          <div className={`${data.mediaRight ? "" : "text-center"}`}>
             <h1>{data.title}</h1>
 
             {data.intro ? (
@@ -18,13 +18,13 @@ const Hero = ({ data }) => {
                   <Link
                     key={`${button.text}-${index}`}
                     href={
-                      button.internal_link
-                        ? button.internal_link.post_name
-                        : button.external_link
+                      button.internalLink
+                        ? button.internalLink.slug
+                        : button.externalLink
                     }
                   >
                     <button className="mb-4">
-                      <a target={button.internal_link ? "_self" : "_blank"}>
+                      <a target={button.internalLink ? "_self" : "_blank"}>
                         {button.text}
                       </a>
                     </button>
@@ -35,14 +35,14 @@ const Hero = ({ data }) => {
         </div>
         <div
           className={`w-full sm:w-1/2 ${
-            data.media_right ? "order-first sm:order-last" : "order-first"
+            data.mediaRight ? "order-first sm:order-last" : "order-first"
           }`}
         >
-          {data.media_type === "image" ? (
-            <img src={data.image} />
-          ) : (
+          {data.mediaType === "image" ? (
+            <img src={data.image.sourceUrl} />
+          ) : data.video ? (
             parse(data.video)
-          )}
+          ) : null}
         </div>
       </section>
     );
@@ -66,13 +66,13 @@ const Hero = ({ data }) => {
                   <Link
                     key={`${button.text}-${index}`}
                     href={
-                      button.internal_link
-                        ? button.internal_link
-                        : button.external_link
+                      button.internalLink
+                        ? button.internalLink
+                        : button.externalLink
                     }
                   >
                     <button className="mb-4">
-                      <a target={button.internal_link ? "_self" : "_blank"}>
+                      <a target={button.internalLink ? "_self" : "_blank"}>
                         {button.text}
                       </a>
                     </button>

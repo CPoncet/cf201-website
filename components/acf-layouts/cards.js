@@ -3,6 +3,8 @@ import Link from "next/link";
 import parse from "html-react-parser";
 
 const Cards = ({ data }) => {
+  console.log(data);
+
   return (
     <section className="container mx-auto">
       {data.cards ? (
@@ -16,10 +18,12 @@ const Cards = ({ data }) => {
                   >
                     <div className="icon-box w-2/3 mx-auto md:w-full md:mx-0 bg-white shadow rounded p-4 flex flex-col items-center justify-center">
                       {card.image ? (
-                        <img src={card.image} alt={card.title} />
+                        <img src={card.image.sourceUrl} alt={card.title} />
                       ) : null}
                       <h4>{card.title}</h4>
-                      <div>{parse(card.short_description)}</div>
+                      {card.shortDescription ? (
+                        <div>{parse(card.shortDescription)}</div>
+                      ) : null}
                       {card.button
                         ? card.button.map((button, index) => (
                             <div
@@ -28,15 +32,15 @@ const Cards = ({ data }) => {
                             >
                               <Link
                                 href={
-                                  button.internal_link
-                                    ? button.internal_link.post_name
-                                    : button.external_link
+                                  button.internalLink
+                                    ? button.internalLink.slug
+                                    : button.externalLink
                                 }
                               >
                                 <button className="block mx-auto" href="#">
                                   <a
                                     target={
-                                      button.internal_link ? "_self" : "_blank"
+                                      button.internalLink ? "_self" : "_blank"
                                     }
                                   >
                                     {button.text}
@@ -58,13 +62,13 @@ const Cards = ({ data }) => {
             <div key={`${button.text}-${index}`} className="text">
               <Link
                 href={
-                  button.internal_link
-                    ? button.internal_link.post_name
-                    : button.external_link
+                  button.internalLink
+                    ? button.internalLink.slug
+                    : button.externalLink
                 }
               >
                 <button className="block mx-auto" href="#">
-                  <a target={button.internal_link ? "_self" : "_blank"}>
+                  <a target={button.internalLink ? "_self" : "_blank"}>
                     {button.text}
                   </a>
                 </button>
