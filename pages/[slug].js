@@ -9,21 +9,27 @@ import PageBuilder from "../components/pageBuilder";
 import { useRouter } from "next/router";
 import Custom404 from "./404";
 
-const Page = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  const {
-    data: pageData,
-    loading: pageLoading,
-    error: pageError,
-  } = useQuery(PAGE, { variables: { id: slug } });
+const Page = ({ previewData }) => {
+  let page;
 
   const {
     data: optionsData,
     loading: optionsLoading,
     error: optionsError,
   } = useQuery(OPTIONS);
+
+  if (previewData) {
+    page = previewData;
+  } else {
+    const router = useRouter();
+    const { slug } = router.query;
+
+    const {
+      data: pageData,
+      loading: pageLoading,
+      error: pageError,
+    } = useQuery(PAGE, { variables: { id: slug } });
+  }
 
   if (pageError || optionsError) {
     return <div>Error loading data</div>;
@@ -33,11 +39,12 @@ const Page = () => {
     return <Loader />;
   }
 
-  if (!pageData.page) {
-    return <Custom404 />;
+  if (!previewData) {
+    if (!pageData.page) {
+      return <Custom404 />;
+    }
+    page = pageData.page;
   }
-
-  let page = pageData.page;
 
   let options = optionsData.options.siteOptions;
 
@@ -47,5 +54,26 @@ const Page = () => {
     </Layout>
   );
 };
+
+export async function getStaticPaths() {
+  const { data } = await fetch(process.env.API_URL, PAGES);
+
+  console.log(data);
+
+  return {
+    paths: data.edges.map(({ node }) => `/${node.slug}`) || [],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(context) {
+  if (context.preview) {
+    return {
+      props: {
+        previewData: context.previewData,
+      },
+    };
+  }
+}
 
 export default Page;
