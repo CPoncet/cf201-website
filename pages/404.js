@@ -1,27 +1,9 @@
 import React from "react";
-import { OPTIONS } from "../lib/queries/options";
-import { useQuery } from "@apollo/client";
-import Loader from "../components/loader";
 import Link from "next/link";
 import Layout from "../components/layout";
+import { getOptions } from "../lib/api";
 
-const Custom404 = () => {
-  const {
-    data: optionsData,
-    loading: optionsLoading,
-    error: optionsError,
-  } = useQuery(OPTIONS);
-
-  if (optionsError) {
-    return <div>Error loading data</div>;
-  }
-
-  if (optionsLoading) {
-    return <Loader />;
-  }
-
-  let options = optionsData.options.siteOptions;
-
+const Custom404 = ({ options }) => {
   return (
     <Layout page="404" options={options}>
       <section className="container mx-auto pt-8">
@@ -34,5 +16,15 @@ const Custom404 = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const options = await getOptions();
+
+  return {
+    props: {
+      options: options.siteOptions,
+    },
+  };
+}
 
 export default Custom404;
