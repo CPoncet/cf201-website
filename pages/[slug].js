@@ -12,7 +12,7 @@ const Page = ({ page, builder, options }) => {
 };
 
 export async function getStaticPaths() {
-  const pages = await getPages();
+  const { pages } = await getPages();
 
   return {
     paths: pages.edges.map(({ node }) => `/${node.slug}`) || [],
