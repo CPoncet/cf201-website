@@ -4,6 +4,7 @@ import PageBuilder from "../components/pageBuilder";
 import { getPages, getPage, getOptions } from "../lib/api";
 
 const Page = ({ page, builder, options }) => {
+  console.log(page);
   return (
     <Layout page={page.slug} options={options} seo={page.seo}>
       <PageBuilder page={builder} />
