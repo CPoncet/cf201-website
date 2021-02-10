@@ -87,7 +87,7 @@ h3 {
   font-style: italic;
   display: inline-block;
   position: relative;
-  line-height: 18px;
+  line-height: 1em;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: responsive 20px 32px;
@@ -392,6 +392,16 @@ footer .rest .social .social-svg circle {
 footer .rest .social .social-svg:hover circle:not(.not-animated) {
   transform: translate(-20px, -21px);
   transition: all 0.2s ease-in-out;
+}
+
+footer .legal li {
+  margin-bottom: 1em;
+  padding-left: 0;
+}
+
+footer .legal li:before,
+footer .legal li:after {
+  content: none;
 }
 
 footer .legal-menu {

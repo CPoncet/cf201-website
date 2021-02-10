@@ -53,20 +53,24 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
             </a>
           </Link>
 
-          <p className="text-center md:text-left">
-            {legalMenu
-              ? legalMenu.map((item, index) => (
-                  <Link
-                    key={`${item.text}-${index}`}
-                    href={`/${item.link.slug}`}
-                    className="legal-menu"
-                  >
-                    <a className="text-primary underline font-semibold">
-                      {item.text}
-                    </a>
-                  </Link>
-                ))
-              : null}
+          <p className="legal text-center md:text-left">
+            <ul>
+              {legalMenu
+                ? legalMenu.map((item, index) => (
+                    <li>
+                      <Link
+                        key={`${item.text}-${index}`}
+                        href={`/${item.link.slug}`}
+                        className="legal-menu"
+                      >
+                        <a className="text-primary underline font-semibold">
+                          {item.text}
+                        </a>
+                      </Link>
+                    </li>
+                  ))
+                : null}
+            </ul>
             <br />
             Tous droits réservés
             <br />
