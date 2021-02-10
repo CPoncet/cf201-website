@@ -5,7 +5,7 @@ import { getPages, getPage, getOptions } from "../lib/api";
 
 const Page = ({ page, builder, options }) => {
   return (
-    <Layout page={page.slug} options={options}>
+    <Layout page={page.slug} options={options} seo={page.seo}>
       <PageBuilder page={builder} />
     </Layout>
   );

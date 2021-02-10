@@ -8,28 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.7",
     "autoprefixer": "^9.8.5",
-    "axios": "^0.19.2",
     "framer-motion": "^2.3.0",
     "graphql": "^15.4.0",
     "html-react-parser": "^1.0.0",
-    "laggard": "^2.0.1",
-    "lost": "^8.3.1",
     "next": "^9.5.3",
     "next-images": "^1.4.1",
     "no-scroll": "^2.1.1",
-    "normalize.css": "^8.0.1",
     "react": "16.13.1",
     "react-device-detect": "^1.14.0",
     "react-dom": "16.13.1",
     "react-hooks-paginator": "^0.4.4",
     "react-icons": "^3.10.0",
-    "react-inlinesvg": "^2.1.0",
+    "react-player": "^2.8.2",
     "react-slick": "^0.27.11",
     "react-spinners": "^0.10.4",
-    "rucksack-css": "^1.0.2",
-    "styled-components": "^5.1.1"
+    "react-svg": "^11.2.3",
+    "rucksack-css": "^1.0.2"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",

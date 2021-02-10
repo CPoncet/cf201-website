@@ -1,18 +1,17 @@
 import React from "react";
 import { isMobile } from "react-device-detect";
 import Layout from "../components/layout";
-import Loader from "../components/loader";
 import PageBuilder from "../components/pageBuilder";
 import parse from "html-react-parser";
 import { getClients, getHomepage, getOptions } from "../lib/api";
 
-const Page = ({ homepage, builder, options, clients }) => {
+const Page = ({ homepage, builder, options, clients, seo }) => {
   if (isMobile) {
     refs = refs.slice(0, 6);
   }
 
   return (
-    <Layout page={homepage.slug} options={options}>
+    <Layout page={homepage.slug} options={options} seo={seo}>
       <PageBuilder page={builder} />
       <section className="references container mx-auto">
         <div>
@@ -57,6 +56,7 @@ export async function getStaticProps() {
     props: {
       homepage: page.homepage,
       builder: page.builder,
+      seo: page.seo,
       options: options.siteOptions,
       clients,
     },

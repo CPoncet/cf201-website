@@ -3,8 +3,6 @@ import Link from "next/link";
 import parse from "html-react-parser";
 
 const Cards = ({ data }) => {
-  console.log(data);
-
   return (
     <section className="container mx-auto">
       {data.cards ? (

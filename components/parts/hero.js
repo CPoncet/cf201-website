@@ -1,6 +1,5 @@
 import React from "react";
-import SVG from "react-inlinesvg";
-import HeroHome from "../svg/HeroHome";
+import { ReactSVG } from "react-svg";
 
 export default (props) => {
   const images = {
@@ -23,7 +22,7 @@ export default (props) => {
             props.reverseOrder ? "order-first" : "order-first sm:order-last"
           }`}
         >
-          {props.image ? <SVG src={images[props.image]} /> : null}
+          {props.image ? <ReactSVG src={images[props.image]} /> : null}
         </div>
       </section>
     );

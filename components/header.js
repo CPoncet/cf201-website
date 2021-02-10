@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import SVG from "react-inlinesvg";
 import noScroll from "no-scroll";
 
 import { motion } from "framer-motion";
 
 import { FiX } from "react-icons/fi";
+import { ReactSVG } from "react-svg";
 
 function Header({ mainLogo, mainMenu, social }) {
   const [nav, setNav] = useState(false);
@@ -57,7 +57,7 @@ function Header({ mainLogo, mainMenu, social }) {
             className="toggle-menu flex items-center justify-center cursor-pointer transition-opacity duration-1000 ease-in-out"
             onClick={() => setNav(!nav)}
           >
-            Menu <SVG className="ml-2 h-10" src="/menu.svg" />
+            Menu <ReactSVG className="ml-2 h-10" src="/menu.svg" />
           </a>
         </div>
       </div>

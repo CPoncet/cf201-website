@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import parse from "html-react-parser";
-import SVG from "react-inlinesvg";
 
 function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
   return (

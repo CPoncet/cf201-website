@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import parse from "html-react-parser";
+import Media from "../parts/media";
 
 const Hero = ({ data }) => {
   if (data.mediaType !== "aucun") {
@@ -38,11 +39,10 @@ const Hero = ({ data }) => {
             data.mediaRight ? "order-first sm:order-last" : "order-first"
           }`}
         >
-          {data.mediaType === "image" ? (
-            <img src={data.image.sourceUrl} />
-          ) : data.video ? (
-            parse(data.video)
-          ) : null}
+          <Media
+            type={data.mediaType}
+            src={data.mediaType === "image" ? data.image.sourceUrl : data.video}
+          />
         </div>
       </section>
     );
