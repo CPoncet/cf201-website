@@ -6,6 +6,8 @@ import parse from "html-react-parser";
 import { getClients, getHomepage, getOptions } from "../lib/api";
 
 const Page = ({ homepage, builder, options, clients, seo }) => {
+  let refs = clients.edges;
+
   if (isMobile) {
     refs = refs.slice(0, 6);
   }
@@ -26,8 +28,8 @@ const Page = ({ homepage, builder, options, clients, seo }) => {
           }}
         >
           <div className="logos flex flex-wrap w-full sm:w-4/6 mx-auto pl-0">
-            {clients &&
-              clients.edges.map(({ node }) => {
+            {refs &&
+              refs.map(({ node }) => {
                 return (
                   <div key={node.id} className="w-1/2 sm:w-1/3">
                     <a target="_blank" href={node.clients.customerWebsite}>
