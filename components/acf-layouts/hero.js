@@ -67,7 +67,7 @@ const Hero = ({ data }) => {
                     key={`${button.text}-${index}`}
                     href={
                       button.internalLink
-                        ? button.internalLink
+                        ? button.internalLink.slug
                         : button.externalLink
                     }
                   >
