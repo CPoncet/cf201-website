@@ -525,6 +525,25 @@ footer .legal-menu {
   height: 100%;
 }
 
+/* Forms */
+label {
+  margin-bottom: 1em;
+}
+
+input {
+  font-family: "Open Sans", sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border-radius: 15px;
+  background: #f2f3f4;
+  border: 1px solid #263238;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 100%;
+}
+
 /* Blog */
 .slide {
   display: inline-flex !important;

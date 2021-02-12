@@ -6,6 +6,7 @@ import Hero from "./acf-layouts/hero";
 import MediaText from "./acf-layouts/mediaText";
 import Title from "./acf-layouts/title";
 import Text from "./acf-layouts/text";
+import ContactModule from "./acf-layouts/contactModule";
 
 const PageBuilder = ({ page }) => {
   return (
@@ -61,6 +62,13 @@ const PageBuilder = ({ page }) => {
               case "page_Builder_Builder_BlocsOrangeClair":
                 return (
                   <BlocsOrangeClair
+                    key={`${element.fieldGroupName}-${index}`}
+                    data={element}
+                  />
+                );
+              case "page_Builder_Builder_ContactModule":
+                return (
+                  <ContactModule
                     key={`${element.fieldGroupName}-${index}`}
                     data={element}
                   />
