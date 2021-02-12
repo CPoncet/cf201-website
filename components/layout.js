@@ -39,7 +39,7 @@ function Layout({ page, children, options, seo }) {
               }
             />
             <meta property="og:url" content={seo.opengraphUrl} />
-            <meta property="og:site_name" content={seo.opengraphSiteName} />
+            <meta property="og:site_name" content="Collectif 201" />
             <link rel="canonical" href={seo.canonical} />
             <meta name="twitter:title" content={seo.twitterTitle} />
             <meta name="twitter:description" content={seo.twitterDescription} />
