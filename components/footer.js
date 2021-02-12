@@ -3,7 +3,6 @@ import Link from "next/link";
 import parse from "html-react-parser";
 
 function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
-  console.log(text);
   return (
     <footer>
       {text ? (
