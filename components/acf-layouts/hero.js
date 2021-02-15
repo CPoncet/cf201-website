@@ -43,6 +43,7 @@ const Hero = ({ data }) => {
           <Media
             type={data.mediaType}
             src={data.mediaType === "image" ? data.image.sourceUrl : data.video}
+            altText={data.image.altText}
           />
         </div>
       </section>
