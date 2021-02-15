@@ -24,11 +24,12 @@ const Hero = ({ data }) => {
                         : button.externalLink
                     }
                   >
-                    <button className="mb-4">
-                      <a target={button.internalLink ? "_self" : "_blank"}>
-                        {button.text}
-                      </a>
-                    </button>
+                    <a
+                      className="btn-primary mb-4"
+                      target={button.internalLink ? "_self" : "_blank"}
+                    >
+                      {button.text}
+                    </a>
                   </Link>
                 ))
               : null}
@@ -64,18 +65,16 @@ const Hero = ({ data }) => {
             {data.buttons
               ? data.buttons.map((button, index) => (
                   <Link
+                    className="btn-primary mb-4"
                     key={`${button.text}-${index}`}
                     href={
                       button.internalLink
                         ? button.internalLink.slug
                         : button.externalLink
                     }
+                    target={button.internalLink ? "_self" : "_blank"}
                   >
-                    <button className="mb-4">
-                      <a target={button.internalLink ? "_self" : "_blank"}>
-                        {button.text}
-                      </a>
-                    </button>
+                    {button.text}
                   </Link>
                 ))
               : null}

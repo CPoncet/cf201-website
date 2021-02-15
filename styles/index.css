@@ -6,17 +6,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Poppins:ital,wght@0,600;1,500&display=swap");
 
 /* Globals */
-svg,
-.svg-wrapper {
-  width: 100%;
-  height: 100%;
-}
 
 /* Mobile */
 @media (max-width: 768px) {
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .menu svg {
+    height: 35px;
   }
 }
 
@@ -58,6 +57,12 @@ body {
   font-size: responsive 12px 18px;
 }
 
+svg,
+.svg-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
 section {
   padding-bottom: 10rem;
 }
@@ -66,7 +71,7 @@ p {
   margin-bottom: 1rem;
 }
 
-button a,
+.btn-primary,
 .bar a {
   color: unset;
   text-decoration: none;
@@ -149,7 +154,7 @@ h4 {
   z-index: -1;
 }
 
-button {
+.btn-primary {
   cursor: pointer;
   border: 2px solid #263238;
   border-radius: 15px;
@@ -161,11 +166,11 @@ button {
   font-size: responsive 12px 14px;
 }
 
-.active button:before {
+.active .btn-primary:before {
   transform: translate(-9px, -9px);
 }
 
-button:before {
+.btn-primary:before {
   content: "";
   z-index: -1;
   display: block;
@@ -180,16 +185,16 @@ button:before {
   transition: all 0.2s ease-in-out;
 }
 
-.slick-dots button:hover:before {
+.slick-dots .btn-primary:hover:before {
   transform: unset;
 }
 
-button:hover:before {
+.btn-primary:hover:before {
   transform: translate(-9px, -9px);
   transition: all 0.2s ease-in-out;
 }
 
-.hero button:last-of-type {
+.hero .btn-primary:last-of-type {
   margin-right: 0;
 }
 

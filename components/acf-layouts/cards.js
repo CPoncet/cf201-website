@@ -26,7 +26,7 @@ const Cards = ({ data }) => {
                         ? card.button.map((button, index) => (
                             <div
                               key={`${button.text}-${index}`}
-                              className="text"
+                              className="text flex justify-center"
                             >
                               <Link
                                 href={
@@ -35,15 +35,14 @@ const Cards = ({ data }) => {
                                     : button.externalLink
                                 }
                               >
-                                <button className="block mx-auto" href="#">
-                                  <a
-                                    target={
-                                      button.internalLink ? "_self" : "_blank"
-                                    }
-                                  >
-                                    {button.text}
-                                  </a>
-                                </button>
+                                <a
+                                  className="btn-primary"
+                                  target={
+                                    button.internalLink ? "_self" : "_blank"
+                                  }
+                                >
+                                  {button.text}
+                                </a>
                               </Link>
                             </div>
                           ))
@@ -57,7 +56,10 @@ const Cards = ({ data }) => {
       ) : null}
       {data.button
         ? data.button.map((button, index) => (
-            <div key={`${button.text}-${index}`} className="text">
+            <div
+              key={`${button.text}-${index}`}
+              className="text flex justify-center"
+            >
               <Link
                 href={
                   button.internalLink
@@ -65,11 +67,12 @@ const Cards = ({ data }) => {
                     : button.externalLink
                 }
               >
-                <button className="block mx-auto" href="#">
-                  <a target={button.internalLink ? "_self" : "_blank"}>
-                    {button.text}
-                  </a>
-                </button>
+                <a
+                  className="btn-primary"
+                  target={button.internalLink ? "_self" : "_blank"}
+                >
+                  {button.text}
+                </a>
               </Link>
             </div>
           ))

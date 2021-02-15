@@ -9,55 +9,83 @@ function Layout({ page, children, options, seo }) {
       <Head>
         {seo ? (
           <>
-            <title>{seo.title}</title>
+            {seo.title ? (
+              <title>{seo.title}</title>
+            ) : (
+              <title>Collectif 201</title>
+            )}
             <meta name="robots" content="index, follow" />
-
-            <meta charset="UTF-8" />
             <meta name="language" content="FR" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0, maximum-scale=1"
             />
-            <meta name="description" content={seo.metaDesc} />
-            <meta name="keywords" content={seo.metaKeywords} />
+            {seo.metaDesc ? (
+              <meta name="description" content={seo.metaDesc} />
+            ) : null}
+            {seo.metaKeywords ? (
+              <meta name="keywords" content={seo.metaKeywords} />
+            ) : null}
             <meta name="theme-color" content="#F19066" />
             <link rel="shortcut icon" href="/favicon.ico" />
-            <meta property="og:type" content={seo.opengraphType} />
-            <meta property="og:title" content={seo.opengraphTitle} />
-            <meta
-              property="og:description"
-              content={seo.opengraphDescription}
-            />
-            <meta
-              property="og:image"
-              content={
-                seo.opengraphImage
-                  ? seo.opengraphImage.sourceUrl
-                  : options.mainLogo
-                  ? options.mainLogo.sourceUrl
-                  : ""
-              }
-            />
-            <meta property="og:url" content={seo.opengraphUrl} />
+            {seo.opengraphType ? (
+              <meta property="og:type" content={seo.opengraphType} />
+            ) : null}
+            {seo.opengraphTitle ? (
+              <meta property="og:title" content={seo.opengraphTitle} />
+            ) : null}
+            {seo.opengraphDescription ? (
+              <meta
+                property="og:description"
+                content={seo.opengraphDescription}
+              />
+            ) : null}
+            {seo.opengraphImage ? (
+              <meta
+                property="og:image"
+                content={
+                  seo.opengraphImage
+                    ? seo.opengraphImage.sourceUrl
+                    : options.mainLogo
+                    ? options.mainLogo.sourceUrl
+                    : ""
+                }
+              />
+            ) : null}
+            {seo.opnengraphUrl ? (
+              <meta property="og:url" content={seo.opengraphUrl} />
+            ) : null}
             <meta property="og:site_name" content="Collectif 201" />
-            <link rel="canonical" href={seo.canonical} />
-            <meta name="twitter:title" content={seo.twitterTitle} />
-            <meta name="twitter:description" content={seo.twitterDescription} />
-            <meta
-              name="twitter:image"
-              content={
-                seo.twitterImage
-                  ? seo.twitterImage.sourceUrl
-                  : options.mainLogo
-                  ? options.mainLogo.sourceUrl
-                  : ""
-              }
-            />
+            {seo.canonical ? (
+              <link rel="canonical" href={seo.canonical} />
+            ) : null}
+            {seo.twitterTitle ? (
+              <meta name="twitter:title" content={seo.twitterTitle} />
+            ) : null}
+            {seo.twitterDescription ? (
+              <meta
+                name="twitter:description"
+                content={seo.twitterDescription}
+              />
+            ) : null}
+            {seo.twitterImage ? (
+              <meta
+                name="twitter:image"
+                content={
+                  seo.twitterImage
+                    ? seo.twitterImage.sourceUrl
+                    : options.mainLogo
+                    ? options.mainLogo.sourceUrl
+                    : ""
+                }
+              />
+            ) : null}
           </>
         ) : null}
 
+        <script>document.documentElement.lang = 'fr'</script>
+
         <script
-          type="text/javascript"
           id="hs-script-loader"
           async
           defer

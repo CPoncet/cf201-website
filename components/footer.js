@@ -30,12 +30,12 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                             : button.externalLink
                         }
                       >
-                        <button
+                        <a
                           target={button.internalLink ? "_self" : "_blank"}
-                          className="mb-4"
+                          className="btn-primary mb-4"
                         >
                           {button.text}
-                        </button>
+                        </a>
                       </Link>
                     ))
                   : null}
@@ -45,7 +45,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
         </section>
       ) : null}
 
-      <section className="rest container mx-auto flex flex-wrap pb-0">
+      <div className="rest container mx-auto flex flex-wrap pb-0">
         <div className="w-full order-last md:order-first md:w-4/12 logo">
           <Link href="/">
             <a>
@@ -71,7 +71,8 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                   ))
                 : null}
             </ul>
-            <br />
+          </p>
+          <p className="legal text-center md:text-left">
             Tous droits réservés
             <br />
             &copy; {new Date().getFullYear()} - COLLECTIF 201
@@ -100,7 +101,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
             ) : null}
           </div>
         </div>
-      </section>
+      </div>
       {mainMenu ? (
         <div className="sitemap flex items-center justify-center mt-16 mb-16">
           <nav className="nav-sitemap">

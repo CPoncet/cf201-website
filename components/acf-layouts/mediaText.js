@@ -51,15 +51,14 @@ const MediaText = ({ data }) => {
                                   : button.externalLink
                               }
                             >
-                              <button className="mb-4">
-                                <a
-                                  target={
-                                    button.internalLink ? "_self" : "_blank"
-                                  }
-                                >
-                                  {button.text}
-                                </a>
-                              </button>
+                              <a
+                                className="btn-primary mb-4"
+                                target={
+                                  button.internalLink ? "_self" : "_blank"
+                                }
+                              >
+                                {button.text}
+                              </a>
                             </Link>
                           ))
                         : null}
