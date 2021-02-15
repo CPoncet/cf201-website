@@ -83,8 +83,6 @@ function Layout({ page, children, options, seo }) {
           </>
         ) : null}
 
-        <script>document.documentElement.lang = 'fr'</script>
-
         <script
           id="hs-script-loader"
           async

@@ -53,7 +53,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
             </a>
           </Link>
 
-          <p className="legal text-center md:text-left">
+          <div className="legal text-center md:text-left">
             <ul>
               {legalMenu
                 ? legalMenu.map((item, index) => (
@@ -71,12 +71,10 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
                   ))
                 : null}
             </ul>
-          </p>
-          <p className="legal text-center md:text-left">
             Tous droits réservés
             <br />
             &copy; {new Date().getFullYear()} - COLLECTIF 201
-          </p>
+          </div>
         </div>
         <div className="w-full mb-8 md:mb-0 md:w-8/12 flex items-center justify-center social">
           <div className="w-full md:w-8/12">

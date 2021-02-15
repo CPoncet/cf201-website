@@ -32,13 +32,21 @@ const Page = ({ homepage, builder, options, clients, seo }) => {
               refs.map(({ node }) => {
                 return (
                   <div key={node.id} className="w-1/2 sm:w-1/3">
-                    <a target="_blank" href={node.clients.customerWebsite}>
+                    {node.clients.customerWebsite ? (
+                      <a target="_blank" href={node.clients.customerWebsite}>
+                        <img
+                          className="p-2"
+                          src={node.clients.customerLogo.sourceUrl}
+                          alt={node.title}
+                        />
+                      </a>
+                    ) : (
                       <img
                         className="p-2"
                         src={node.clients.customerLogo.sourceUrl}
                         alt={node.title}
                       />
-                    </a>
+                    )}
                   </div>
                 );
               })}
