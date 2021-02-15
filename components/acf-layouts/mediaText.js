@@ -29,7 +29,7 @@ const MediaText = ({ data }) => {
                         ? item.image.sourceUrl
                         : item.video
                     }
-                    altText={data.image.altText}
+                    altText={item.image.altText}
                   />
                 </div>
                 <div
