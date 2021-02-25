@@ -57,11 +57,11 @@ body {
   font-size: responsive 12px 18px;
 }
 
-svg,
+/*svg,
 .svg-wrapper {
   width: 100%;
   height: 100%;
-}
+}*/
 
 section {
   padding-bottom: 10rem;
