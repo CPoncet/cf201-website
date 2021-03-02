@@ -12,7 +12,7 @@
     "framer-motion": "^2.3.0",
     "graphql": "^15.4.0",
     "html-react-parser": "^1.0.0",
-    "next": "^9.5.3",
+    "next": "^10.0.7",
     "next-images": "^1.4.1",
     "no-scroll": "^2.1.1",
     "react": "16.13.1",
