@@ -14,7 +14,7 @@ const Hero = ({ data }) => {
             {data.intro ? (
               <div className="mb-8">{parse(data.intro)}</div>
             ) : null}
-            <div className="flex">
+            <div className="flex justify-end">
               {data.buttons
                 ? data.buttons.map((button, index) => (
                     <Link
@@ -65,7 +65,7 @@ const Hero = ({ data }) => {
             {data.intro ? (
               <div className="mb-8">{parse(data.intro)}</div>
             ) : null}
-            <div className="flex">
+            <div className="flex justify-end">
               {data.buttons
                 ? data.buttons.map((button, index) => (
                     <Link
