@@ -14,25 +14,27 @@ const Hero = ({ data }) => {
             {data.intro ? (
               <div className="mb-8">{parse(data.intro)}</div>
             ) : null}
-            {data.buttons
-              ? data.buttons.map((button, index) => (
-                  <Link
-                    key={`${button.text}-${index}`}
-                    href={
-                      button.internalLink
-                        ? button.internalLink.slug
-                        : button.externalLink
-                    }
-                  >
-                    <a
-                      className="btn-primary mb-4"
-                      target={button.internalLink ? "_self" : "_blank"}
+            <div className="flex">
+              {data.buttons
+                ? data.buttons.map((button, index) => (
+                    <Link
+                      key={`${button.text}-${index}`}
+                      href={
+                        button.internalLink
+                          ? button.internalLink.slug
+                          : button.externalLink
+                      }
                     >
-                      {button.text}
-                    </a>
-                  </Link>
-                ))
-              : null}
+                      <a
+                        className="btn-primary mb-4 text-center"
+                        target={button.internalLink ? "_self" : "_blank"}
+                      >
+                        {button.text}
+                      </a>
+                    </Link>
+                  ))
+                : null}
+            </div>
           </div>
         </div>
         <div
@@ -63,22 +65,25 @@ const Hero = ({ data }) => {
             {data.intro ? (
               <div className="mb-8">{parse(data.intro)}</div>
             ) : null}
-            {data.buttons
-              ? data.buttons.map((button, index) => (
-                  <Link
-                    className="btn-primary mb-4"
-                    key={`${button.text}-${index}`}
-                    href={
-                      button.internalLink
-                        ? button.internalLink.slug
-                        : button.externalLink
-                    }
-                    target={button.internalLink ? "_self" : "_blank"}
-                  >
-                    {button.text}
-                  </Link>
-                ))
-              : null}
+            <div className="flex">
+              {data.buttons
+                ? data.buttons.map((button, index) => (
+                    <Link
+                      key={`${button.text}-${index}`}
+                      href={
+                        button.internalLink
+                          ? button.internalLink.slug
+                          : button.externalLink
+                      }
+                      target={button.internalLink ? "_self" : "_blank"}
+                    >
+                      <a className="btn-primary mb-4 text-center">
+                        {button.text}
+                      </a>
+                    </Link>
+                  ))
+                : null}
+            </div>
           </div>
         </div>
       </section>

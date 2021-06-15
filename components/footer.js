@@ -57,7 +57,7 @@ function Footer({ mainMenu, mainLogo, legalMenu, social, text, introRs }) {
             <ul>
               {legalMenu
                 ? legalMenu.map((item, index) => (
-                    <li>
+                    <li key={`${item.name}-${index}`}>
                       <Link
                         key={`${item.text}-${index}`}
                         href={`/${item.link.slug}`}
