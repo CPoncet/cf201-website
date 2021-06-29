@@ -6,7 +6,7 @@ import Media from "../parts/media";
 const Hero = ({ data }) => {
   if (data.mediaType !== "aucun") {
     return (
-      <section className="hero container mx-auto flex flex-wrap text-right pt-0 sm:pt-32">
+      <section className="hero container mx-auto flex flex-wrap text-right pt-0">
         <div className="text w-full sm:w-1/2 flex items-center pr-4">
           <div className={`${data.mediaRight ? "" : "text-center"}`}>
             <h1>{data.title}</h1>

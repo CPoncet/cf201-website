@@ -39,7 +39,7 @@ function Header({ mainLogo, mainMenu, social }) {
   };
 
   return (
-    <header className={`sticky inset-0 z-40`}>
+    <header className="sticky inset-0 z-40 pb-4">
       <div className="bar flex container mx-auto pt-2">
         <div className="w-1/2 logo">
           <Link href="/">

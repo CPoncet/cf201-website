@@ -1,7 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
 import PageBuilder from "../components/pageBuilder";
-import { getPages, getPage, getOptions } from "../lib/api";
+import getPages from "../lib/schemas/getPages";
+import getPage from "../lib/schemas/getPage";
+import getOptions from "../lib/schemas/getOptions";
 
 const Page = ({ page, builder, options }) => {
   return (

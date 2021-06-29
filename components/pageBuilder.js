@@ -7,6 +7,7 @@ import MediaText from "./acf-layouts/mediaText";
 import Title from "./acf-layouts/title";
 import Text from "./acf-layouts/text";
 import ContactModule from "./acf-layouts/contactModule";
+import LastNews from "./acf-layouts/lastNews";
 
 const PageBuilder = ({ page }) => {
   return (
@@ -73,6 +74,14 @@ const PageBuilder = ({ page }) => {
                     data={element}
                   />
                 );
+              case "page_Builder_Builder_DerniersArticles":
+                return (
+                  <LastNews
+                    key={`${element.fieldGroupName}-${index}`}
+                    element={element}
+                  />
+                );
+
               default:
                 return null;
             }

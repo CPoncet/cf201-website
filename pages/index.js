@@ -3,7 +3,9 @@ import { isMobile } from "react-device-detect";
 import Layout from "../components/layout";
 import PageBuilder from "../components/pageBuilder";
 import parse from "html-react-parser";
-import { getClients, getHomepage, getOptions } from "../lib/api";
+import getClients from "../lib/schemas/getClients";
+import getHomepage from "../lib/schemas/getHomepage";
+import getOptions from "../lib/schemas/getOptions";
 
 const Page = ({ homepage, builder, options, clients, seo }) => {
   let refs = clients.edges;
@@ -13,7 +15,7 @@ const Page = ({ homepage, builder, options, clients, seo }) => {
   }
 
   return (
-    <Layout page={homepage.slug} options={options} seo={seo}>
+    <Layout page="homepage" options={options} seo={seo}>
       <PageBuilder page={builder} />
       <section className="references container mx-auto">
         <div>

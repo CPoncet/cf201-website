@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Layout from "../components/layout";
-import { getOptions } from "../lib/api";
+import getOptions from "../lib/schemas/getOptions";
 
 const Custom404 = ({ options }) => {
   return (
