@@ -3,7 +3,7 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
 import getPosts, { GET_POSTS } from "../../lib/schemas/getPosts";
-import Loader from "react-spinners/BeatLoader";
+import Loader from "../loader";
 
 const LastNews = ({ element }) => {
   const { data, loading, error, refetch, networkStatus } = useQuery(GET_POSTS, {
