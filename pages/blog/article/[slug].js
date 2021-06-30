@@ -59,7 +59,7 @@ const Post = ({ post, options }) => {
             Par {author}, le {date.toLocaleDateString("fr-Fr")}
           </em>
         </p>
-        <p>{parse(post.content)}</p>
+        {post.content ? parse(post.content) : null}
       </section>
     </Layout>
   );

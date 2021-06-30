@@ -41,7 +41,7 @@ const LastNews = ({ element }) => {
                     ) : null}
                     <div className="p-4">
                       <h3>{node.title}</h3>
-                      <p>{parse(node.excerpt)}</p>
+                      {node.excerpt ? parse(node.excerpt) : null}
                       <Link href={`/blog/article/${node.slug}`}>
                         <a className="btn-primary">Lire</a>
                       </Link>
