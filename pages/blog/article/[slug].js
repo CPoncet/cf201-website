@@ -8,6 +8,18 @@ import parse from "html-react-parser";
 import { FiArrowLeft } from "react-icons/fi";
 
 const Post = ({ post, options }) => {
+  const firstName = post.author.node.firstName;
+  const lastName = post.author.node.lastName;
+  let author = "";
+
+  if (!firstName || !lastName) {
+    author = post.author.node.name;
+  } else {
+    author = `${firstName} ${lastName}`;
+  }
+
+  const date = new Date(post.date);
+
   return (
     <Layout page={post.slug} options={options} seo={post.seo}>
       <section
@@ -26,11 +38,27 @@ const Post = ({ post, options }) => {
             </a>
           </Link>
         </div>
-        <div className="container mx-auto h-full flex items-end">
-          <h1 className="text-white">{post.title}</h1>
+        <div className="container mx-auto h-full flex flex-col">
+          <div className="w-full">
+            {post.categories && post.categories.edges.length
+              ? post.categories.edges.map(({ node }) => (
+                  <Link href={`/blog/cat/${node.slug}`}>
+                    <a className="no-underline bg-white text-primary rounded-lg text-xs px-2 py-1 mr-2">
+                      {node.name}
+                    </a>
+                  </Link>
+                ))
+              : null}
+          </div>
+          <h1 className="text-white pt-4">{post.title}</h1>
         </div>
       </section>
       <section className="container mx-auto pt-8">
+        <p>
+          <em>
+            Par {author}, le {date.toLocaleDateString("fr-Fr")}
+          </em>
+        </p>
         <p>{parse(post.content)}</p>
       </section>
     </Layout>

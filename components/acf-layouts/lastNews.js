@@ -1,13 +1,17 @@
 import { useQuery, NetworkStatus } from "@apollo/client";
-import { useState } from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
-import getPosts, { GET_POSTS } from "../../lib/schemas/getPosts";
+import { GET_POSTS } from "../../lib/schemas/getPosts";
 import Loader from "../loader";
 
 const LastNews = ({ element }) => {
+  const variables = {
+    first: element.perPage,
+    where: element.where,
+  };
+
   const { data, loading, error, refetch, networkStatus } = useQuery(GET_POSTS, {
-    variables: { first: element.perPage },
+    variables,
     notifyOnNetworkStatusChange: true,
   });
 
@@ -17,10 +21,14 @@ const LastNews = ({ element }) => {
     return <Loader />;
   }
 
+  const { startCursor, endCursor, hasNextPage, hasPreviousPage } =
+    data.posts.pageInfo;
+
   return (
     <section className="container mx-auto">
+      {element.lastnewsTitle ? <h2>{element.lastnewsTitle}</h2> : null}
       <div className="flex flex-wrap">
-        {data
+        {data && data.posts.edges.length
           ? data.posts.edges.map(({ node }, index) => (
               <div key={node.title} className="w-full md:w-1/3">
                 <div className="p-4">
@@ -42,19 +50,19 @@ const LastNews = ({ element }) => {
                 </div>
               </div>
             ))
-          : "Aucun article"}
+          : "Aucun article n'a été écrit pour l'instant !"}
       </div>
       {element.pagination ? (
         <div>
-          {data.posts.pageInfo.hasPreviousPage ? (
+          {hasPreviousPage ? (
             <a
               className="btn-primary"
               onClick={() =>
                 refetch({
-                  first: undefined,
-                  after: undefined,
+                  first: null,
+                  after: null,
                   last: element.perPage,
-                  before: data.posts.pageInfo.startCursor,
+                  before: startCursor || null,
                 })
               }
             >
@@ -62,15 +70,15 @@ const LastNews = ({ element }) => {
             </a>
           ) : null}
 
-          {data.posts.pageInfo.hasNextPage ? (
+          {hasNextPage ? (
             <a
               className="btn-primary"
               onClick={() =>
                 refetch({
                   first: element.perPage,
-                  after: data.posts.pageInfo.endCursor,
-                  last: undefined,
-                  before: undefined,
+                  after: endCursor || null,
+                  last: null,
+                  before: null,
                 })
               }
             >
