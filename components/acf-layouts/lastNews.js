@@ -52,7 +52,7 @@ const LastNews = ({ element }) => {
             ))
           : "Aucun article n'a été écrit pour l'instant !"}
       </div>
-      {element.pagination ? (
+      {element.pagination !== null ? (
         <div>
           {hasPreviousPage ? (
             <a
