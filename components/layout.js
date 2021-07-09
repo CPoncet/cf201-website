@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
+import CookieConsent from "react-cookie-consent";
 
 function Layout({ page, children, options, seo }) {
   return (
@@ -129,6 +130,16 @@ function Layout({ page, children, options, seo }) {
         social={options.social}
         text={options.footerText}
       />
+
+      <CookieConsent
+        buttonStyle={{ marginRight: "6em" }}
+        buttonText="Accepter"
+        enableDeclineButton
+        declineButtonText="Refuser"
+      >
+        Ce site web utilise les cookies pour recueillir des statistiques de
+        visite
+      </CookieConsent>
     </div>
   );
 }

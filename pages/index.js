@@ -14,6 +14,7 @@ const Page = ({ homepage, builder, options, clients, seo }) => {
 
   return (
     <Layout page={homepage.slug} options={options} seo={seo}>
+      Hello
       <PageBuilder page={builder} />
       <section className="references container mx-auto">
         <div>
